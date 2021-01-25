@@ -1,0 +1,72 @@
+{
+    "generator": "SpecResults.Json.JsonReporter",
+    "features": [
+      {
+        "description": "In order to test CW cap markets portal. \nAs a new user or broker I want to verify CW Cap Markets offers all expected functionality",
+        "description_html": "<p>In order to test CW cap markets portal. <br />As a new user or broker I want to verify CW Cap Markets offers all expected functionality</p>",
+        "scenarios": [
+          {
+            "given": {
+              "result": "OK",
+              "steps": [
+                {
+                  "steps": [],
+                  "title": "I visit the CW cap markets site",
+                  "start_time": "2018-02-07T12:47:41.6094604+05:30",
+                  "end_time": "2018-02-07T12:47:46.0403456+05:30",
+                  "result": "OK"
+                }
+              ],
+              "start_time": "2018-02-07T12:47:41.4870755+05:30",
+              "end_time": "2018-02-07T12:47:51.3176231+05:30"
+            },
+            "when": {
+              "result": "OK",
+              "steps": [
+                {
+                  "steps": [],
+                  "title": "I create a user account",
+                  "start_time": "2018-02-07T12:47:51.333249+05:30",
+                  "end_time": "2018-02-07T12:49:51.8925476+05:30",
+                  "result": "OK"
+                }
+              ],
+              "start_time": "2018-02-07T12:47:51.3176231+05:30",
+              "end_time": "2018-02-07T12:50:05.595723+05:30"
+            },
+            "then": {
+              "result": "OK",
+              "steps": [
+                {
+                  "steps": [],
+                  "title": "I will receive an email to verify the account",
+                  "start_time": "2018-02-07T12:50:05.5992118+05:30",
+                  "end_time": "2018-02-07T12:51:53.5973326+05:30",
+                  "result": "OK"
+                }
+              ],
+              "start_time": "2018-02-07T12:50:05.595723+05:30",
+              "end_time": "2018-02-07T12:51:56.5480504+05:30"
+            },
+            "result": "OK",
+            "tags": [
+              "CWCapMarkets",
+              "CW07",
+              "Author=Harshit"
+            ],
+            "title": "User creates an account",
+            "start_time": "2018-02-07T12:47:41.4870755+05:30",
+            "end_time": "2018-02-07T12:51:57.2768254+05:30"
+          }
+        ],
+        "result": "OK",
+        "tags": [],
+        "title": "CWCapMarkets",
+        "start_time": "2018-02-07T12:47:36.1143725+05:30",
+        "end_time": "2018-02-07T12:51:57.3043431+05:30"
+      }
+    ],
+    "result": "OK",
+    "start_time": "2018-02-07T12:47:36.1143725+05:30",
+    "end_time": "2018-02-07T12:51:57.9414028+05:30"
+  }

@@ -1,0 +1,18 @@
+{
+    "SocrativeTeacherURL": "https://b.socrative.com/login/teacher/",
+    "email": "rajiv@showbie.com",
+    "password": "92cktaYV@",
+    "QuizName": "Cypress Demo",
+    "QuickQuestion": "Favourite Colour",
+    "SOCNUMBER": "",
+
+
+    "QuizTitle": "Add a question to get started!",
+
+    "MCQuestion1": "Capital of Canada",
+    "MCAnswer1": "Toronto",
+    "MCAnswer2": "Edmonton",
+    "MCAnswer3": "Ottawa",
+
+    "TFQuestion1": "Showbie is in Edmonton"
+}

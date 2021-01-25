@@ -1,0 +1,16 @@
+{
+  "baseUrl": "https://regres.in/api",
+  "chromeWebSecurity": false,
+  "waitForAnimations": false,
+  "animationDistanceThreshold": 50,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "reportFileName": "report",
+    "overwrite": false,
+    "html": true,
+    "json": true,
+    "charts": true
+  },
+  "projectId": "nbx23f"
+}

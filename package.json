@@ -1,0 +1,30 @@
+{
+  "name": "cypress-practice",
+  "version": "1.0.0",
+  "description": "This is for poc",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/FinalReport.json",
+    "generate_mochawesome_report": "marge cypress/reports/FinalReport.json --reportDir ./ --inline",
+    "final_report": "npm run merge && npm run generate_mochawesome_report",
+    "test": "node_modules\\.bin\\cypress run --config pageLoadTimeout=100000",
+    "runtests": "npm run test --",
+
+    "SocrativeTests": "node_modules/.bin/cypress run --spec cypress/integration/pipeline/*.js",
+    "SocrativeTestsRun": "npm run SocrativeTests --"
+  },
+  "author": "Rajiv",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.3",
+    "cypress": "^6.2.1",
+    "cypress-cucumber-preprocessor": "^4.0.0",
+    "cypress-file-upload": "^4.1.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "path/to/steps_definition"
+  }
+}
