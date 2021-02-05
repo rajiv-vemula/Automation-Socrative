@@ -1,4 +1,4 @@
-package parallel;
+package stepDefinitions;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 				//"rerun:target/failedrerun.txt"
 				}, 
 		monochrome = true,
-		glue = { "parallel" }
+		glue = { "stepDefinitions" }
 		
 )
 

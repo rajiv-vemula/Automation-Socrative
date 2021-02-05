@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-03T23:05:21Z" name="Default suite" finished-at="2021-02-03T23:05:40Z" duration-ms="18176">
+  <suite started-at="2021-02-04T22:01:27Z" name="Default suite" finished-at="2021-02-04T22:02:32Z" duration-ms="65085">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallel.ParallelRun@6bc407fd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:stepDefinitions.ParallelRun@291f18]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-02-03T23:05:21Z" name="Default test" finished-at="2021-02-03T23:05:40Z" duration-ms="18176">
-      <class name="parallel.ParallelRun">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallel.ParallelRun@6bc407fd]" started-at="2021-02-03T23:05:21Z" name="setUpClass" finished-at="2021-02-03T23:05:22Z" duration-ms="425" status="PASS">
+    <test started-at="2021-02-04T22:01:27Z" name="Default test" finished-at="2021-02-04T22:02:32Z" duration-ms="65085">
+      <class name="stepDefinitions.ParallelRun">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:stepDefinitions.ParallelRun@291f18]" started-at="2021-02-04T22:01:27Z" name="setUpClass" finished-at="2021-02-04T22:01:28Z" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallel.ParallelRun@6bc407fd]" started-at="2021-02-03T23:05:22Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-02-03T23:05:34Z" duration-ms="12209" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:stepDefinitions.ParallelRun@291f18]" started-at="2021-02-04T22:01:28Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-02-04T22:02:32Z" duration-ms="64802" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,27 +27,14 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Room Name not added]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Room Name not added
-at org.junit.Assert.fail(Assert.java:89)
-at org.junit.Assert.assertTrue(Assert.java:42)
-at parallel.RoomPageSteps.teacher_verifies_room_added_message_and_room_name_in_the_page(RoomPageSteps.java:49)
-at ✽.Teacher verifies Room Added Message and Room Name in the page(file:///Users/rajivvemula/Downloads/SocrativeSelenium/src/java/resources/Features/SmokeTest.feature:19)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallel.ParallelRun@6bc407fd]" started-at="2021-02-03T23:05:34Z" name="tearDownClass" finished-at="2021-02-03T23:05:40Z" duration-ms="5530" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:stepDefinitions.ParallelRun@291f18]" started-at="2021-02-04T22:02:32Z" name="tearDownClass" finished-at="2021-02-04T22:02:32Z" duration-ms="46" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- parallel.ParallelRun -->
+      </class> <!-- stepDefinitions.ParallelRun -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

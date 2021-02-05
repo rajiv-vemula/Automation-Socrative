@@ -19,9 +19,10 @@ public class RoomPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private Properties prop;
+	private String RoomName;
 	
 	// Locators
-	private By roomsTab = By.xpath(("//*[@id=\'header-nav\']/ul/li[3]"));
+	private By roomsTab = By.xpath(("//span[text()='Rooms']"));
 	private By roomTitle = By.cssSelector(".page-title");
 	private By AddRoom = By.xpath("//button[text()='Add room']"); 
 	private By addRoomWindow = By.xpath("//span[text()='Add Room']");
@@ -30,6 +31,10 @@ public class RoomPage {
 	private By cancelBtn = By.xpath("//button[text()='Cancel']");
 	private By toolTip = By.cssSelector(".tooltip-text");
 	private By roomNames = By.xpath("//*[@class='room-name']");
+	private By popUpTitle = By.cssSelector(".popup-title");
+	private By popUpMessage = By.id("pop-up-message");
+	private By popUpYesBtn = By.xpath("//button[text()='Yes']");
+	private By popUpNoBtn = By.xpath("//button[text()='No']");
 	
 	//Contructor
 	public RoomPage(WebDriver driver)
@@ -37,6 +42,7 @@ public class RoomPage {
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
 		prop = ConfigReader.init_prop();
+		RoomName = null;
 	}
 
 	//Action Methods
@@ -93,7 +99,7 @@ public class RoomPage {
 	
 	public boolean verifyRoomName() throws InterruptedException
 	{
-		String roomName = prop.getProperty("RandomRoomName");
+		RoomName = prop.getProperty("RandomRoomName").toUpperCase();
 		Thread.sleep(4000);
 		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		List<WebElement> names = driver.findElements(roomNames);
@@ -114,7 +120,7 @@ public class RoomPage {
 		}
 		
 		System.out.println("List of Room Names: "+list);
-		if(list.contains(roomName))
+		if(list.contains(RoomName))
 		return true;
 		else 
 			return false;
@@ -122,4 +128,23 @@ public class RoomPage {
 	}
 	
 
+	public void clickOnRoom()
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='"+RoomName.toLowerCase()+"']")));
+		driver.findElement(By.xpath("//span[text()='"+RoomName.toLowerCase()+"']")).click();;
+	}
+	
+	public void confirmPopUp()
+	{
+		String message = "Are you sure you want to change to the "+RoomName+" room?";
+		check(driver.findElement(popUpTitle).getText().equals("Please Confirm"));
+		check(driver.findElement(popUpMessage).getText().equals(message));
+		check(driver.findElement(popUpNoBtn).isDisplayed());
+		driver.findElement(popUpYesBtn).click();
+	}
+	
+	public boolean verifyHeaderRoomName()
+	{
+		return driver.findElement(By.xpath("//span[text() = '"+RoomName.toLowerCase()+"']")).isDisplayed();
+	}
 }

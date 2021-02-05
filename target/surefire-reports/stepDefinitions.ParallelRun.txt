@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: stepDefinitions.ParallelRun
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.678 s <<< FAILURE! - in stepDefinitions.ParallelRun
+runScenario(stepDefinitions.ParallelRun)  Time elapsed: 0.07 s  <<< FAILURE!
+io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in stepDefinitions.RoomPageSteps.teacher_views_the_rooms_page(java.lang.String) and stepDefinitions.QuizzesPageSteps.teacher_views_the_page(java.lang.String)
+

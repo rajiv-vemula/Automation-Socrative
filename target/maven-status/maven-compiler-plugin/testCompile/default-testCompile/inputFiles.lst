@@ -1,7 +1,8 @@
+/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/stepDefinitions/QuizzesPageSteps.java
 /Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/TestRunners/SmokeTestRunner.java
-/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/parallel/ParallelRun.java
-/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/parallel/LoginPageSteps.java
-/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/parallel/RoomPageSteps.java
+/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/stepDefinitions/ParallelRun.java
+/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/stepDefinitions/LoginPageSteps.java
 /Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/TestRunners/SocrativeRunner.java
-/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/parallel/SocrativeHooks.java
-/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/parallel/QuizzesPageSteps.java
+/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/stepDefinitions/RoomPageSteps.java
+/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/stepDefinitions/LaunchPageSteps.java
+/Users/rajivvemula/Downloads/SocrativeSelenium/src/test/java/stepDefinitions/SocrativeHooks.java
