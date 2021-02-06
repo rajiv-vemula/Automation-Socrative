@@ -40,7 +40,7 @@ Feature: Smoke Test for Socrative Application
     And Teacher enters the Options/Answers for the question
     And Teacher chooses right answer and clicks on Save
     Then Teacher views the Multiple Choice Question is Saved into Quiz
-    And Teacher views Add a Question text with Question Types
+    And Teacher views "Add a Question" text with Question Types
     
     
     When Teacher clicks on True/False Question
@@ -61,6 +61,27 @@ Feature: Smoke Test for Socrative Application
     Then Teacher views the Quiz is saved in the top of the Quiz List in Quizzes Tab
     
     #Launch a Quiz
+    When Teacher clicks on Launch Tab
+    Then Teacher views the "Launch" Page
+    
+    When Teacher clicks on Quiz
+    And Teacher selects the Quiz from the list and click on Next
+    And Teacher enters the Delivery Method and Settings and click on Start
+    Then Teacher launches a quiz and control moves to Results Tab
+    And Teacher views the QuizName, Show Names, Responses and Results Toggle in the page
+    
+    When Teacher clicks on the first question
+    Then Teacher views the question with Show Results button
+    And Teacher views the navigate between question button
+    
+    When Teacher clicks on Finish
+    Then Teacher views the "Finish Activity?" Popup on the page
+    
+    When Teacher clicks on Finish 
+    Then Teacher views the control is moved to Reports Tab
+    And Teacher views the Toggles, Share and Export Button
+    
+    
     #Launch an Activity
     #Launch a SA Quick Question
     #Launch a Space Race
