@@ -3,6 +3,7 @@ package com.util;
 import java.util.Properties;
 
 public class CommonUtils {
+	
 
 	public static String getURL()
 	{
@@ -25,4 +26,5 @@ public class CommonUtils {
 		
 		return url;
 	}
+	
 }

@@ -21,7 +21,7 @@ Feature: Smoke Test for Socrative Application
     Then Teacher verifies Room Added Message and Room Name in the page
     
     When Teacher clicks on the Room Name and confirms the Popup
-    Then Teacher verifies the control is in the Launch Page
+    Then Teacher verifies the control is in the "Launch" Page
     And Teacher verifies Room Name is displayed on the centre of page
     
     
@@ -67,7 +67,8 @@ Feature: Smoke Test for Socrative Application
     When Teacher clicks on Quiz
     And Teacher selects the Quiz from the list and click on Next
     And Teacher enters the Delivery Method and Settings and click on Start
-    Then Teacher launches a quiz and control moves to Results Tab
+    Then Teacher launches a quiz and control moves to "Results" Tab
+    And Teacher verifies activity is running from Results Page
     And Teacher views the QuizName, Show Names, Responses and Results Toggle in the page
     
     When Teacher clicks on the first question

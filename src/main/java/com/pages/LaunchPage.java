@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.sun.tools.javac.util.Assert;
@@ -50,15 +51,46 @@ public class LaunchPage {
 		prop = ConfigReader.init_prop();
 	}
 	
-	public void verifyLaunchPage()
+	public boolean verifyLaunchPage()
 	{
-		Assert.check(driver.findElement(launchTab).isDisplayed());
+		return driver.findElement(launchTab).isDisplayed();
+	}
+	
+	public void clickOnLaunchTab()
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(launchTab));
+		driver.findElement(launchTab).click();
+	}
+	
+	public void clickOnQuizBtn()
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(QuizBtn));
+		driver.findElement(QuizBtn).click();
+	}
+	
+	public void selectQuizFromList()
+	{
+		By quizName = By.xpath("//span[text()='"+prop.getProperty("QuizName")+"']");
 		
-	      //identify parent element with ./.. expression in xpath
-	     // WebElement parent = driver.findElement(launchTab).findElement(By.xpath("./.."));
-	      
-		String verify = driver.findElement(launchTab).getAttribute("class");
-		System.out.println("Class"+verify);
-	      //Assert.check(verify.equals("selected"));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(quizName));
+		Assert.check(driver.findElement(quizName).isDisplayed());
+		driver.findElement(quizName).click();
+	}
+	
+	public void clickOnNextBtn() {
+		driver.findElement(nextBtn).click();
+	}
+	
+	public void selectDeliverySettings()
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(InstantFeedbackBtn));
+		driver.findElement(InstantFeedbackBtn).click();
+		Assert.check(driver.findElement(RequireNamesToggle).isSelected());
+		Assert.check(driver.findElement(ShowQuestionFeedbackToggle).isSelected());
+	}
+	
+	public void clickOnStartBtn()
+	{
+		driver.findElement(startBtn).click();
 	}
 }

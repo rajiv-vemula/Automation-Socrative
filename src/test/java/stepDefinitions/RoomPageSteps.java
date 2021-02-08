@@ -1,7 +1,10 @@
 package stepDefinitions;
 
-import org.testng.AssertJUnit;
+
+
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import com.Factory.DriverFactory;
 import com.pages.RoomPage;
 
@@ -26,7 +29,7 @@ public class RoomPageSteps {
 
 	@Then("Teacher views {string} Page")
 	public void teacher_views_rooms_page(String title) {
-		AssertJUnit.assertEquals(title, roomPage.getRoomTitle());	
+		Assert.assertEquals(title, roomPage.getRoomTitle());	
 	}
 
 	@When("Teacher clicks on Add Room")
@@ -42,7 +45,7 @@ public class RoomPageSteps {
 
 	@Then("Teacher verifies Room Added Message and Room Name in the page")
 	public void teacher_verifies_room_added_message_and_room_name_in_the_page() throws InterruptedException {
-		AssertJUnit.assertTrue("Room Name not found", roomPage.verifyRoomName());
+		Assert.assertTrue(roomPage.verifyRoomName());
 	}
 
 	@When("Teacher clicks on the Room Name and confirms the Popup")
@@ -54,6 +57,6 @@ public class RoomPageSteps {
 	@Then("Teacher verifies Room Name is displayed on the centre of page")
 	public void teacher_verifies_room_name_is_displayed_on_the_centre_of_page()
 	{
-		AssertJUnit.assertTrue(roomPage.verifyHeaderRoomName());
+		Assert.assertTrue(roomPage.verifyHeaderRoomName());
 	}
 }

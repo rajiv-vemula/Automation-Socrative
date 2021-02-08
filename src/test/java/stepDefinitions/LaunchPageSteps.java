@@ -1,13 +1,15 @@
 package stepDefinitions;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.Factory.DriverFactory;
 import com.pages.LaunchPage;
+import com.util.ElementUtil;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class LaunchPageSteps {
 	
@@ -22,9 +24,33 @@ public class LaunchPageSteps {
 		softAssert = new SoftAssert();
 	}
 
-	@Then("Teacher verifies the control is in the Launch Page")
-	public void teacher_verifies_the_page_is_in_launch_tab_and_room_name_is_displayed_on_the_centre_of_page() {
-	   launchPage.verifyLaunchPage();
+	@Then("Teacher verifies the control is in the {string} Page")
+	public void teacher_verifies_control_is_in_the_page(String page) {
+	   softAssert.assertTrue(launchPage.verifyLaunchPage());
+	   ElementUtil ele = new ElementUtil(driver);
+	   softAssert.assertTrue(ele.verifyControlOnTab(page));
+	}
+	
+	@When("Teacher clicks on Launch Tab")
+	public void teacher_clicks_on_launch_tab() {
+	    launchPage.clickOnLaunchTab();
+	}
+
+	@When("Teacher clicks on Quiz")
+	public void teacher_clicks_on_quiz() {
+	    launchPage.clickOnQuizBtn();
+	}
+
+	@When("Teacher selects the Quiz from the list and click on Next")
+	public void teacher_selects_the_quiz_from_the_list_and_click_on_next() {
+	    launchPage.selectQuizFromList();
+	    launchPage.clickOnNextBtn();
+	}
+
+	@When("Teacher enters the Delivery Method and Settings and click on Start")
+	public void teacher_enters_the_delivery_method_and_settings_and_click_on_start() {
+	    launchPage.selectDeliverySettings();
+	    launchPage.clickOnStartBtn();
 	}
 
 }
