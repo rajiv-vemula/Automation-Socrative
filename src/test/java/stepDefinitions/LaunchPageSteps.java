@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
@@ -26,7 +25,6 @@ public class LaunchPageSteps {
 
 	@Then("Teacher verifies the control is in the {string} Page")
 	public void teacher_verifies_control_is_in_the_page(String page) {
-	   softAssert.assertTrue(launchPage.verifyLaunchPage());
 	   ElementUtil ele = new ElementUtil(driver);
 	   softAssert.assertTrue(ele.verifyControlOnTab(page));
 	}
@@ -47,9 +45,9 @@ public class LaunchPageSteps {
 	    launchPage.clickOnNextBtn();
 	}
 
-	@When("Teacher enters the Delivery Method and Settings and click on Start")
-	public void teacher_enters_the_delivery_method_and_settings_and_click_on_start() {
-	    launchPage.selectDeliverySettings();
+	@When("Teacher enters the Delivery Method as {string} and Settings and click on Start")
+	public void teacher_enters_the_delivery_method_and_settings_and_click_on_start(String method) {
+	    launchPage.selectDeliverySettings(method);
 	    launchPage.clickOnStartBtn();
 	}
 

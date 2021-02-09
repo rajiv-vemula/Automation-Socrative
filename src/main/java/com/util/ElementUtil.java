@@ -27,8 +27,10 @@ public class ElementUtil {
 			e.printStackTrace();
 		}
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(controlTab));    
-		return driver.findElement(controlTab).getText().equals(page);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(controlTab)); 
+		System.out.println(driver.findElement(controlTab).getText());
+		return driver.findElement(controlTab).getText().equals(page.toUpperCase());
 	}
 
 }

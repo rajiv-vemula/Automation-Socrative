@@ -46,7 +46,7 @@ public class QuizzesPage {
 	
 	//Multiple Choice Question
 	private By MCQuestion = By.xpath("//span[text()='MC']");
-	private By MultipleChoiceQuestionBtn  = By.xpath("//*[contains(text(), 'Multiple Choice')]");
+	private By MultipleChoiceQuestionBtn  = By.xpath("//button[contains(text(), 'Multiple Choice')]");
 	private By MCQuestionWindow = By.cssSelector("div[data-question = 'MC']");
 	private By MCQToAsk = By.cssSelector("div[data-placeholder = 'Have a multiple-choice question to ask?']");
 	private By MCQAnswerA = By.cssSelector("div[data-placeholder = 'Answer A'");
@@ -57,7 +57,7 @@ public class QuizzesPage {
 	// True False Question
 	private By TFQuestion = By.xpath("//span[text()='TF']");
 	private By TFQuestionWindow = By.cssSelector("div[data-question = 'MC']");
-	private By TrueFalseQuestionBtn = By.xpath("//*[contains(text(), 'True / False')]");
+	private By TrueFalseQuestionBtn = By.xpath("//button[contains(text(), 'True / False')]");
 	private By TFQToAsk = By.cssSelector("div[data-placeholder = 'Have a true-or-false question to ask?']");
 	private By TrueBtn = By.xpath("//span[contains(text(),'True')]");
 	private By FalseBtn = By.xpath("//span[contains(text(),'False')]");
@@ -65,7 +65,7 @@ public class QuizzesPage {
 	// Short Answer Question
 	private By SAQuestion = By.xpath("//span[text()='SA']");	
 	private By SAQuestionWindow = By.cssSelector("div[data-question = 'FR']");
-	private By ShortAnswerQuestionBtn = By.xpath("//*[contains(text(), 'Short Answer')]");
+	private By ShortAnswerQuestionBtn = By.xpath("//button[contains(text(), 'Short Answer')]");
 	private By SAQToAsk = By.cssSelector("div[data-placeholder = 'Have a short-answer question to ask?']");
 	private By SACorrectAnswers = By.cssSelector("input[placeholder = 'Correct Answer (Optional)']");
 	
@@ -227,6 +227,7 @@ public class QuizzesPage {
 	public void clickOnShortAnswerQuestion()
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(ShortAnswerQuestionBtn));
+		System.out.println(ShortAnswerQuestionBtn.toString());
 		driver.findElement(ShortAnswerQuestionBtn).click();
 	}
 	

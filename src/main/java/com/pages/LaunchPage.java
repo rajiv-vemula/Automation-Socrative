@@ -51,11 +51,6 @@ public class LaunchPage {
 		prop = ConfigReader.init_prop();
 	}
 	
-	public boolean verifyLaunchPage()
-	{
-		return driver.findElement(launchTab).isDisplayed();
-	}
-	
 	public void clickOnLaunchTab()
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(launchTab));
@@ -81,16 +76,16 @@ public class LaunchPage {
 		driver.findElement(nextBtn).click();
 	}
 	
-	public void selectDeliverySettings()
+	public void selectDeliverySettings(String method)
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(InstantFeedbackBtn));
-		driver.findElement(InstantFeedbackBtn).click();
-		Assert.check(driver.findElement(RequireNamesToggle).isSelected());
-		Assert.check(driver.findElement(ShowQuestionFeedbackToggle).isSelected());
+		By deliveryMethod = By.xpath("//span[contains(text() ,'"+method+"')]");
+		wait.until(ExpectedConditions.elementToBeClickable(deliveryMethod));
+		driver.findElement(deliveryMethod).click();
 	}
 	
 	public void clickOnStartBtn()
 	{
 		driver.findElement(startBtn).click();
 	}
+	
 }

@@ -21,22 +21,16 @@ public class ResultsPageSteps {
 		resultsPage = new ResultsPage(driver);	
 	}
 	
-	@Then("Teacher launches a quiz and control moves to {string} Tab")
-	public void teacher_launches_a_quiz_and_control_moves_to_tab(String page) {
-		ElementUtil ele = new ElementUtil(driver);
-	    Assert.assertTrue(ele.verifyControlOnTab(page));
-	}
-	
-	@Then("Teacher verifies activity is running from Results Page")
-	public void teacher_verifies_activity_is_running_from_results_page()
+	@Then("Teacher verifies the activity is {string} from Results Page")
+	public void teacher_verifies_the_activity_is_from_results_page(String type)
 	{
-		Assert.assertTrue(resultsPage.verifyActiveActivity());
+		Assert.assertTrue(resultsPage.verifyActivity(type));
 	}
 	
 	@Then("Teacher views the QuizName, Show Names, Responses and Results Toggle in the page")
 	public void teacher_views_the_quiz_name_show_names_responses_and_results_toggle_in_the_page() {
-		Assert.assertTrue(resultsPage.verifyLaunchQuiz());
-		resultsPage.verifyToggles();
+		Assert.assertTrue(resultsPage.verifyQuizName());
+		resultsPage.verifyToggles("Active Activity");
 	}
 
 	@When("Teacher clicks on the first question")
@@ -57,28 +51,27 @@ public class ResultsPageSteps {
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Teacher clicks on Finish")
-	public void teacher_clicks_on_finish() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@When("Teacher clicks on Finish Button on results Page")
+	public void teacher_clicks_on_finish_button_on_results() {
+	    resultsPage.clickOnFinishBtn();
 	}
 
 	@Then("Teacher views the {string} Popup on the page")
 	public void teacher_views_the_popup_on_the_page(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    Assert.assertTrue(resultsPage.verifyFinishPopup(string));
 	}
-
-	@Then("Teacher views the control is moved to Reports Tab")
-	public void teacher_views_the_control_is_moved_to_reports_tab() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	
+	@When("Teacher clicks on {string} Button in the Popup")
+	public void teacher_clicks_on_finish_button_in_the_popup(String popupBtn)
+	{
+		resultsPage.clickOnButtonInPopUp(popupBtn);
 	}
-
+	
 	@Then("Teacher views the Toggles, Share and Export Button")
 	public void teacher_views_the_toggles_share_and_export_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		Assert.assertTrue(resultsPage.verifyShareBtn());
+		Assert.assertTrue(resultsPage.verifyExportBtn());
+		resultsPage.verifyToggles("After Activity");
 	}
 
 }
