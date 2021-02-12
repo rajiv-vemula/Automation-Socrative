@@ -188,7 +188,8 @@ public class QuizzesPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(editQuestion));
 		Assert.check(driver.findElement(editQuestion).isDisplayed());
 		Assert.check(driver.findElement(deleteQuestion).isDisplayed());
-		//Assert.check(driver.findElement(copyQuestion).isDisplayed());
+		wait.until(ExpectedConditions.visibilityOfElementLocated(copyQuestion));
+		Assert.check(driver.findElement(copyQuestion).isDisplayed());
 	}
 	
 	public void validateQuestionTextAndTypes(String text)
@@ -226,6 +227,11 @@ public class QuizzesPage {
 	
 	public void clickOnShortAnswerQuestion()
 	{
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		wait.until(ExpectedConditions.elementToBeClickable(ShortAnswerQuestionBtn));
 		System.out.println(ShortAnswerQuestionBtn.toString());
 		driver.findElement(ShortAnswerQuestionBtn).click();

@@ -100,18 +100,12 @@ public class RoomPage {
 	public boolean verifyRoomName() throws InterruptedException
 	{
 		RoomName = prop.getProperty("RandomRoomName").toUpperCase();
-		Thread.sleep(4000);
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		By EnteredRoomName = By.xpath("//span[contains(text(),'"+RoomName.toLowerCase()+"')]");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(EnteredRoomName));
 		List<WebElement> names = driver.findElements(roomNames);
-		
 		
 //		names.forEach((rNames) -> {
 //			if(rNames.getText().contains(prop.getProperty("RandomRoomName"))) 
-//			
-//				System.out.println("Room Name is Present");
-//			
-//			else System.out.println("Room Name is not present");
-//				});
 		
 		List<String> list = new ArrayList<>();
 		for(WebElement e : names)
@@ -120,8 +114,9 @@ public class RoomPage {
 		}
 		
 		System.out.println("List of Room Names: "+list);
-		if(list.contains(RoomName))
-		return true;
+		if(list.contains(RoomName)) {
+			return true;
+		}
 		else 
 			return false;
 	    

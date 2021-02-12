@@ -45,9 +45,14 @@ public class LaunchPageSteps {
 	    launchPage.clickOnNextBtn();
 	}
 
-	@When("Teacher enters the Delivery Method as {string} and Settings and click on Start")
-	public void teacher_enters_the_delivery_method_and_settings_and_click_on_start(String method) {
+	@When("Teacher enters the Delivery Method as {string} and Settings")
+	public void teacher_enters_the_delivery_method_and_settings(String method) {
 	    launchPage.selectDeliverySettings(method);
+	}
+	
+	@When("Teacher click on Start Button to Launch a quiz")
+	public void teacher_click_on_start_button_to_launch_a_quiz()
+	{
 	    launchPage.clickOnStartBtn();
 	}
 

@@ -27,7 +27,7 @@ public class ElementUtil {
 			e.printStackTrace();
 		}
 		
-		
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(controlTab)); 
 		System.out.println(driver.findElement(controlTab).getText());
 		return driver.findElement(controlTab).getText().equals(page.toUpperCase());

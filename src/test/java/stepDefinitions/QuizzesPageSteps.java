@@ -71,12 +71,17 @@ public class QuizzesPageSteps {
 		quizPage.enterAnswersForQuestion();
 	}
 
-	@When("Teacher chooses right answer and clicks on Save")
-	public void teacher_chooses_right_answer_and_clicks_on_save() {
+	@When("Teacher chooses right answer for MC Question")
+	public void teacher_chooses_right_answer_for_mc_question() {
 		quizPage.selectCorrectMCAnswer();
-		quizPage.clickOnSaveQuestion();
 	}
 
+	@When("Teacher clicks on Save Question button")
+	public void teacher_clicks_on_save_question_button()
+	{
+		quizPage.clickOnSaveQuestion();
+	}
+	
 	@Then("Teacher views the Multiple Choice Question is Saved into Quiz")
 	public void teacher_views_the_multiple_choice_question_is_saved_into_quiz() {
 		quizPage.validateQuestionView();
@@ -107,10 +112,9 @@ public class QuizzesPageSteps {
 		quizPage.selectCorrectTFAnswer();
 	}
 
-	@When("Teacher enters Explanation and clicks on Save")
-	public void teacher_enters_explanation_and_clicks_on_save() {
+	@When("Teacher enters the Explanation for the TF Question")
+	public void teacher_enters_explanation_for_the_tf_question() {
 		quizPage.enterExplanationForTFQ();
-		quizPage.clickOnSaveQuestion();
 	}
 
 	@Then("Teacher views the True\\/False Question is Added into Quiz")
@@ -133,8 +137,8 @@ public class QuizzesPageSteps {
 		quizPage.enterSATypeQuestion();
 	}
 
-	@When("Teacher enters the correct answers and clicks on Save")
-	public void teacher_enters_the_correct_answers_and_clicks_on_save() {
+	@When("Teacher enters the correct answers for SA Question")
+	public void teacher_enters_the_correct_answers_for_sa_question() {
 		quizPage.selectCorrectSAAnswer();
 	}
 
@@ -145,7 +149,6 @@ public class QuizzesPageSteps {
 
 	@When("Teacher clicks on Save and Exit Button to Save the Quiz")
 	public void teacher_clicks_on_save_and_exit_button_to_save_the_quiz() {
-		quizPage.clickOnSaveQuestion();
 		quizPage.clickOnSaveAndExit();
 	}
 

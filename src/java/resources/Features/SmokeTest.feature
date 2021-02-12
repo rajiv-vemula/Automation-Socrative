@@ -13,52 +13,55 @@ Feature: Smoke Test for Socrative Application
   @Smoke @CreateRoom
   Scenario: Smoke Test
     #Create a Room
-    #When Teacher clicks on Rooms Tab
-    #Then Teacher views "Rooms" Page
-    #
-    #When Teacher clicks on Add Room
-    #And Teacher enters the Room Name and clicks on Add
-    #Then Teacher verifies Room Added Message and Room Name in the page
-    #
-    #When Teacher clicks on the Room Name and confirms the Popup
-    #Then Teacher verifies the control is in the "Launch" Page
-    #And Teacher verifies Room Name is displayed on the centre of page
-    #
-    #
+    When Teacher clicks on Rooms Tab
+    Then Teacher views "Rooms" Page
+    
+    When Teacher clicks on Add Room
+    And Teacher enters the Room Name and clicks on Add
+    Then Teacher verifies Room Added Message and Room Name in the page
+    
+    When Teacher clicks on the Room Name and confirms the Popup
+    Then Teacher verifies the control is in the "Launch" Page
+    And Teacher verifies Room Name is displayed on the centre of page
+    
+    
     #Create a Quiz
-    #When Teacher clicks on Quizzes Tab
-    #Then Teacher views the "Quizzes" Page
-    #
-    #When Teacher clicks on Add Quiz and Create New
-    #Then Teacher views the default name, toggles and question types in the page
-    #
-    #When Teacher enters the Quiz Name
-    #And Teacher clicks on Multiple Choice Question Type
-    #Then Teacher views the MC Type with all the default options
-    #
-    #When Teacher enters Multiple Choice Question
-    #And Teacher enters the Options/Answers for the question
-    #And Teacher chooses right answer and clicks on Save
-    #Then Teacher views the Multiple Choice Question is Saved into Quiz
-    #And Teacher views "Add a Question" text with Question Types
-    #
-    #
-    #When Teacher clicks on True/False Question
-    #Then Teacher views the TF Type with all the default options
-    #When Teachers enters the True/False Question 
-    #And Teacher selects the correct option 
-    #And Teacher enters Explanation and clicks on Save
-    #Then Teacher views the True/False Question is Added into Quiz 
-    #
-    #
-    #When Teacher clicks on Short Answer Question
-    #Then Teacher views the SA Type with all the default options
-    #When Teacher enters the Short Answer Question
-    #And Teacher enters the correct answers and clicks on Save
-    #Then Teacher views the SA Question is saved into Quiz
-    #
-    #When Teacher clicks on Save and Exit Button to Save the Quiz
-    #Then Teacher views the Quiz is saved in the top of the Quiz List in Quizzes Tab
+    When Teacher clicks on Quizzes Tab
+    Then Teacher views the "Quizzes" Page
+    
+    When Teacher clicks on Add Quiz and Create New
+    Then Teacher views the default name, toggles and question types in the page
+    
+    When Teacher enters the Quiz Name
+    And Teacher clicks on Multiple Choice Question Type
+    Then Teacher views the MC Type with all the default options
+    
+    When Teacher enters Multiple Choice Question
+    And Teacher enters the Options/Answers for the question
+    And Teacher chooses right answer for MC Question
+    And Teacher clicks on Save Question button
+    Then Teacher views the Multiple Choice Question is Saved into Quiz
+    And Teacher views "Add a Question" text with Question Types
+    
+    
+    When Teacher clicks on True/False Question
+    Then Teacher views the TF Type with all the default options
+    When Teachers enters the True/False Question 
+    And Teacher selects the correct option 
+    And Teacher enters the Explanation for the TF Question
+    And Teacher clicks on Save Question button
+    Then Teacher views the True/False Question is Added into Quiz 
+    
+    
+    When Teacher clicks on Short Answer Question
+    Then Teacher views the SA Type with all the default options
+    When Teacher enters the Short Answer Question
+    And Teacher enters the correct answers for SA Question
+    And Teacher clicks on Save Question button
+    Then Teacher views the SA Question is saved into Quiz
+    
+    When Teacher clicks on Save and Exit Button to Save the Quiz
+    Then Teacher views the Quiz is saved in the top of the Quiz List in Quizzes Tab
     
     #Launch a Quiz
     When Teacher clicks on Launch Tab
@@ -66,7 +69,8 @@ Feature: Smoke Test for Socrative Application
     
     When Teacher clicks on Quiz
     And Teacher selects the Quiz from the list and click on Next
-    And Teacher enters the Delivery Method as "Instant Feedback" and Settings and click on Start
+    And Teacher enters the Delivery Method as "Instant Feedback" and Settings 
+    And Teacher click on Start Button to Launch a quiz
     Then Teacher verifies the control is in the "Results" Page
     And Teacher verifies the activity is "Active" from Results Page
     And Teacher views the QuizName, Show Names, Responses and Results Toggle in the page
@@ -112,15 +116,44 @@ Feature: Smoke Test for Socrative Application
     When Teacher clicks on "Finish" Button in the Popup
     Then Teacher verifies the activity is "InActive" from Results Page
     
+    
+    
     #Launch a Space Race
-    #Launch an Exit Ticket
+    When Teacher clicks on Launch Tab
+    Then Teacher verifies the control is in the "Launch" Page
+    
+    When Teacher clicks on Space Race
+    And Teacher selects the Quiz from the list and click on Next
+    And Teacher choose Settings and Toggles
+    And Teacher click on Start Button to Launch a quiz
+    Then Teacher verifies the control is in the "Results" Page  
+    And Teacher verifies Space Race is launched with all the functionalities
+    And Teacher verifies the activity is "Active" from Results Page
+    
+    When Teacher clicks on Finish Button on results Page
+    And Teacher clicks on OK to Confirm the Popup
+    Then Teacher verifies the control is in the "Reports" Page
+    Then Teacher verifies the activity is "InActive" from Results Page
+    And Teacher views the Toggles, Share and Export Button
+    
+    #TODO -- Launch an Exit Ticket
     #Launch a MC,TF Quick Questions
     
-    #Validate the Report
-    #Retrieve and validate existing report
+    #Retrieve and validate an existing report from Reports Page
+    
+    #Verify the Teacher Account is PRO
+    When Teacher clicks on Header username on top right corner
+    And Teacher clicks on Profile Button
+    And Teacher clicks on Account Button
+    Then Teacher verifies the "Socrative PRO" batch in the page
     
     #Logout from Application
+    When Teacher clicks on Header username on top right corner
+    And Teacher clicks on Sign Out Button
+    Then Teacher verifies the "Please Confirm" popup to Signout of application
     
+    When Teacher clicks on Yes in the Popup
+    Then Teacher views the default Socrative Login Page
     
     
     
