@@ -1,8 +1,0 @@
-TestRunners/SmokeTestRunner.class
-stepDefinitions/LoginPageSteps.class
-TestRunners/SocrativeRunner.class
-stepDefinitions/LaunchPageSteps.class
-stepDefinitions/QuizzesPageSteps.class
-stepDefinitions/RoomPageSteps.class
-stepDefinitions/SocrativeHooks.class
-stepDefinitions/ParallelRun.class

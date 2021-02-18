@@ -1,8 +1,8 @@
 /target/
+/test-output/Default suite/
+/test-output/old/
 *.css
 *.png
 *.html
 *.js
 *.gif
-/test-output/Default suite/
-/test-output/old/
