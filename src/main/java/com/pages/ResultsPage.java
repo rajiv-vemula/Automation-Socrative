@@ -67,9 +67,9 @@ public class ResultsPage {
 	public void verifyToggles(String message)
 	{
 		if(message.equalsIgnoreCase("Active Activity")) {
-		Assert.check(driver.findElement(ShowNamesToggle).isSelected());
-		Assert.check(driver.findElement(ShowResponsesToggle).isSelected());
-		Assert.check(driver.findElement(ShowResultsToggle).isSelected());
+		Assert.check(driver.findElement(ShowNamesToggle).isEnabled());
+		Assert.check(driver.findElement(ShowResponsesToggle).isEnabled());
+		Assert.check(driver.findElement(ShowResultsToggle).isEnabled());
 		}
 		else if(message.equalsIgnoreCase("After Activity")) {
 			Assert.check(!driver.findElement(ShowNamesToggle).isSelected());
@@ -117,4 +117,5 @@ public class ResultsPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ExportBtn));
 		return driver.findElement(ExportBtn).isDisplayed();
 	}
+	
 }

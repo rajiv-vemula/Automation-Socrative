@@ -55,5 +55,53 @@ public class LaunchPageSteps {
 	{
 	    launchPage.clickOnStartBtn();
 	}
+	
+	@When("Teacher clicks on Short Answer from Quick Question Section")
+	public void teacher_clicks_on_short_answer_from_quick_question_section()
+	{
+		
+	}
+	
+	@Then("Teacher verifies SA View with default options")
+	public void teacher_verifies_sa_view_with_default_options()
+	{
+		
+	}
+	
+	@When("Teacher enters the question under Optional Question Section")
+	public void teacher_enters_the_question_under_optional_question_section()
+	{
+		
+	}
+	
+	@When("Teacher selects the toggles for Unlimited Responses and Student Names")
+	public void teacher_selects_the_toggles_for_unlimited_responses_and_student_names()
+	{
+		
+	}
+	
+	@Then("Teacher views the {string} text with current date and time")
+	public void teacher_views_the_text_with_current_date_and_time(String text)
+	{
+		
+	}
+	
+	@Then("Teacher views the Start Vote, Show Answers, Show Names Buttons")
+	public void teacher_views_the_start_vote_show_answers_show_names_button()
+	{
+		
+	}
+	
+	@When("Teacher clicks on Space Race")
+	public void teacher_clicks_on_space_race()
+	{
+		
+	}
+	
+	@When("Teacher choose the Space Race Settings and Toggles")
+	public void teacher_choose_the_space_race_settings_and_toggles()
+	{
+		
+	}
 
 }

@@ -16,6 +16,46 @@ public class LoginPage {
 	private By signInButton = By.id("teacherLoginButton");
 	private By headerName = By.cssSelector("#header-room-name");
 	private By userName = By.cssSelector("#header-user-name span");
+	private By teacherLoginMessage = By.xpath("//h1[contains(text(),'Teacher Login')]");
+	private By teacherLoginForm = By.id("teacherLoginForm");
+	private By firstName = By.id("firstName");
+	private By lastName = By.id("lastName");
+	private By signUpemail = By.id("email");
+	private By confirmEmail = By.id("email2");
+	private By signUpPwd = By.id("password");
+	private By confirmPwd = By.id("password2");
+	private By cancelBtn = By.xpath("//button[contains(text(),'CANCEL')]");
+	private By nextBtn = By.xpath("//button[contains(text(),'NEXT')]");
+	private By countryList = By.cssSelector("input[value='Select Your Country']");
+	private By organizationType = By.cssSelector("input[value='Select Your Organization Type']");
+	private By organizationName = By.id("orgName");
+	private By role = By.cssSelector("input[value='Select Your Role']");
+	private By termsCheckBox = By.id("terms");
+	private By freeAcct = By.cssSelector(".free-account-type-icon");
+	private By finishBtn = By.id("register-finish-button");
+	private By popUpTitle = By.cssSelector(".popup-title");
+	private By popUpOKBtn = By.xpath("//button[contains(text(),'OK')]");
+	
+	// Socrative PRO
+	private By socrativeProAcct = By.cssSelector(".pro-account-type-icon");
+	private By enterLicenseKeyLink = By.xpath("//span[contains(text(),'Enter License Key')]");
+	private By licenseKey = By.id("license-key-id");
+	private By activateBtn = By.xpath("//button[contains(text(),'ACTIVATE')]");
+	
+	private By seats = By.id("licenseSeats");
+	private By years = By.cssSelector("div.custom-select-container > input");
+	private By couponName = By.id("couponName");
+	private By applyCouponBtn = By.id("applyCouponButton");
+	private By applyLicenseCheckBox = By.id("applyNow");
+	private By reviewAndPayBtn = By.id("reviewAndPayButton");
+	private By nameOnCard = By.id("nameOnCard");
+	private By cardNumber = By.id("cardNumber");
+	private By expiryDate = By.cssSelector("input[value='Month']");
+	private By year = By.cssSelector("input[value='Year']");
+	private By cvc = By.id("cvc");
+	private By purchaseBtn = By.id("licensePurchaseButton");
+	
+	
 	
 	// 2.Contructor of the Page
 	public LoginPage(WebDriver driver)
@@ -62,6 +102,24 @@ public class LoginPage {
 		}	
 		else 
 			return false;
+	}
+
+	public boolean verifyLoginPage() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(teacherLoginMessage));
+		
+		if( driver.findElement(teacherLoginMessage).isDisplayed() && driver.findElement(teacherLoginForm).isDisplayed())
+		{
+			return true;
+		}
+		else
+		{
+			System.out.println("Login Page is Not displayed");
+			return false;
+		}
+	}
+
+	public void clickOnLink(String link) {
+		driver.findElement(By.linkText(link)).click();
 	}
 
 }

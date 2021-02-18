@@ -81,7 +81,7 @@ public class QuizzesPage {
 	public void clickOnQuizzesTab()
 	{
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

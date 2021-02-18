@@ -29,8 +29,8 @@ public class LoginPageSteps {
 		driver.get(CommonUtils.getURL());
 	}
 
-	@When("Teacher enters Username and Password")
-	public void teacher_enters_username_and_password(DataTable dataTable) throws InterruptedException {
+	@When("Teacher enters Email and Password")
+	public void teacher_enters_email_and_password(DataTable dataTable) throws InterruptedException {
 		List<List<String>> loginList = dataTable.asLists(String.class);	
 		
 		loginPage.enterEmail(loginList.get(0).get(0));
@@ -44,7 +44,7 @@ public class LoginPageSteps {
 	}
 	
 	@When("Teacher clicks on Sign In Button")
-	public void teacher_clicks_on_sign_in_button() throws InterruptedException {
+	public void teacher_clicks_on_sign_in_button(){
 		loginPage.clickOnSignIn();
 	}
 
@@ -53,5 +53,21 @@ public class LoginPageSteps {
 		Assert.assertTrue("Socrative Home Page is not visible",loginPage.verifyLogin());
 	}
 
+	@Then("Teacher views the default Socrative Login Page")
+	public void teacher_views_the_default_socrative_login_page()
+	{
+		Assert.assertTrue(loginPage.verifyLoginPage());
+	}
+	
+	@When("Teacher clicks on {string} link")
+	public void teacher_clicks_on_sign_in_button(String link) {
+		loginPage.clickOnLink(link);
+	}
+	
+	@Then("Teacher views {string} page")
+	public void teacher_views_page(String page)
+	{
+		
+	}
 	
 }

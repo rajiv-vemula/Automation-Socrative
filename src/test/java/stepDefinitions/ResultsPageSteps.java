@@ -32,25 +32,7 @@ public class ResultsPageSteps {
 		Assert.assertTrue(resultsPage.verifyQuizName());
 		resultsPage.verifyToggles("Active Activity");
 	}
-
-	@When("Teacher clicks on the first question")
-	public void teacher_clicks_on_the_first_question() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Teacher views the question with Show Results button")
-	public void teacher_views_the_question_with_show_results_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Teacher views the navigate between question button")
-	public void teacher_views_the_navigate_between_question_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
+	
 	@When("Teacher clicks on Finish Button on results Page")
 	public void teacher_clicks_on_finish_button_on_results() {
 	    resultsPage.clickOnFinishBtn();
@@ -72,6 +54,30 @@ public class ResultsPageSteps {
 		Assert.assertTrue(resultsPage.verifyShareBtn());
 		Assert.assertTrue(resultsPage.verifyExportBtn());
 		resultsPage.verifyToggles("After Activity");
+	}
+	
+	@When("Teacher clicks on Results Tab")
+	public void teacher_clicks_on_results_tab()
+	{
+		
+	}
+	
+	@When("Teacher clicks on Launch Activity Button")
+	public void teacher_clicks_on_launch_activity_button()
+	{
+		
+	}
+	
+	@Then("Teacher verifies Space Race is launched with all the functionalities")
+	public void teacher_verifies_space_race_is_launched_with_all_the_functionalities()
+	{
+		
+	}
+	
+	@Then("Teacher clicks on OK to Confirm the Popup")
+	public void teacher_clicks_on_ok_to_confirm_the_popup()
+	{
+		
 	}
 
 }

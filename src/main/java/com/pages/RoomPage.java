@@ -6,6 +6,8 @@ import static com.sun.tools.javac.util.Assert.check;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -103,10 +105,7 @@ public class RoomPage {
 		By EnteredRoomName = By.xpath("//span[contains(text(),'"+RoomName.toLowerCase()+"')]");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(EnteredRoomName));
 		List<WebElement> names = driver.findElements(roomNames);
-		
-//		names.forEach((rNames) -> {
-//			if(rNames.getText().contains(prop.getProperty("RandomRoomName"))) 
-		
+	
 		List<String> list = new ArrayList<>();
 		for(WebElement e : names)
 		{
@@ -119,13 +118,16 @@ public class RoomPage {
 		}
 		else 
 			return false;
-	    
 	}
 	
 
 	public void clickOnRoom()
 	{
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='"+RoomName.toLowerCase()+"']")));
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.xpath("//span[text()='"+RoomName.toLowerCase()+"']")).click();;
 	}
 	

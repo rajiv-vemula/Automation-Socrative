@@ -1,17 +1,22 @@
-@Smoke
+
 Feature: Smoke Test for Socrative Application
 
   Background: 
     Given Teacher navigates to Socrative Login Page
-    When Teacher enters Username and Password
-      | rajiv@showbie.com | 92cktaYV@ |
-    Then Teacher views the "Reset password" and "Create account" Links
+    Then Teacher views the default Socrative Login Page
+    And Teacher views the "Reset password" and "Create account" Links
+    
+  @Smoke
+  Scenario: Smoke Test for Socrative
+  	
+  	#Login to Socrative
+  	When Teacher enters Email and Password
+      | rajiv+qa@showbie.com | 92cktaYV@ |
+    
     
     When Teacher clicks on Sign In Button
     Then Teacher views the Socrative Home Page
-
-  @Smoke @CreateRoom
-  Scenario: Smoke Test
+    
     #Create a Room
     When Teacher clicks on Rooms Tab
     Then Teacher views "Rooms" Page
@@ -81,12 +86,13 @@ Feature: Smoke Test for Socrative Application
     When Teacher clicks on "Finish" Button in the Popup
     Then Teacher verifies the activity is "InActive" from Results Page
     And Teacher views the Toggles, Share and Export Button
+    And Teacher verifies the date and time of the Report in the page
     
-    When Teacher clicks on the any question
+    When Teacher clicks on the 1st question from Results Grid
     Then Teacher views the question with buttons for respective question types
-    And Teacher views the navigate between question button
     
-    When Teacher clicks on "Back To Results Table" button
+    When Teacher navigates between questions
+    And Teacher clicks on "Back To Results Table" button on Reports Page
     Then Teacher verifies the control is in the "Reports" Page
     
     #  TODO
@@ -103,7 +109,7 @@ Feature: Smoke Test for Socrative Application
     
     When Teacher enters the question under Optional Question Section
     And Teacher selects the toggles for Unlimited Responses and Student Names
-    And Teacher clicks on Start Button
+    And Teacher click on Start Button to Launch a quiz
     Then Teacher verifies the control is in the "Results" Page
     And Teacher views the "Quick Question" text with current date and time
     And Teacher views the Start Vote, Show Answers, Show Names Buttons
@@ -124,7 +130,7 @@ Feature: Smoke Test for Socrative Application
     
     When Teacher clicks on Space Race
     And Teacher selects the Quiz from the list and click on Next
-    And Teacher choose Settings and Toggles
+    And Teacher choose the Space Race Settings and Toggles
     And Teacher click on Start Button to Launch a quiz
     Then Teacher verifies the control is in the "Results" Page  
     And Teacher verifies Space Race is launched with all the functionalities
@@ -133,7 +139,7 @@ Feature: Smoke Test for Socrative Application
     When Teacher clicks on Finish Button on results Page
     And Teacher clicks on OK to Confirm the Popup
     Then Teacher verifies the control is in the "Reports" Page
-    Then Teacher verifies the activity is "InActive" from Results Page
+    And Teacher verifies the activity is "InActive" from Results Page
     And Teacher views the Toggles, Share and Export Button
     
     #TODO -- Launch an Exit Ticket
@@ -141,11 +147,8 @@ Feature: Smoke Test for Socrative Application
     
     #Retrieve and validate an existing report from Reports Page
     
-    #Verify the Teacher Account is PRO
-    When Teacher clicks on Header username on top right corner
-    And Teacher clicks on Profile Button
-    And Teacher clicks on Account Button
-    Then Teacher verifies the "Socrative PRO" batch in the page
+    #Verify the Teacher Account Profile
+    
     
     #Logout from Application
     When Teacher clicks on Header username on top right corner

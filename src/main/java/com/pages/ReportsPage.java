@@ -1,8 +1,15 @@
 package com.pages;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.util.ConfigReader;
@@ -13,12 +20,54 @@ public class ReportsPage {
 	private WebDriverWait wait;
 	private Properties prop;
 	
-	
+	private By FinishBtn = By.xpath("//div[contains(text(),'Finish')]");
+	private By ShowNamesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
+	private By ShowResponsesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
+	private By ShowResultsToggle = By.xpath("//span[contains(text() ,'Show Names')]");
+	private By NextQuestionBtn = By.cssSelector("button[aria-label = 'Next Question']");
+	private By PreviousQuestionBtn = By.cssSelector("button[aria-label = 'Previous Question']");
+	private By BackToResultsTabBtn = By.xpath("//*[contains(text(),'Back to Results Tab')]");
+	private By ShowResultsBtn = By.xpath("//button[contains(text(),'Show Results')]");
+	private By ShowAnswersBtn = By.xpath("//button[contains(text(),'Show Answers')]");
+	private By ShowNamesBtn = By.xpath("//button[contains(text(),'Show Names')]");
+	private By ScoreSelectBtn = By.id("score-select");
+	private By NamesAscending = By.xpath("//span[contains(text(),'ascending')]");
+	private By ShareBtn = By.xpath("//div[contains(text(),'Share')]");
+	private By ExportBtn = By.xpath("//div[contains(text(),'Export')]");
 	
 	public ReportsPage(WebDriver driver)
 	{
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
 		prop = ConfigReader.init_prop();
+	}
+
+
+	public void clickOnButton(String button) 
+	{
+		By BackToResultsTabBtn = By.xpath("//div[contains(text(),'"+button+"')])]");
+		driver.findElement(BackToResultsTabBtn).click();
+		
+	}
+
+	public void clickOnQuestion(int questionNumber) {
+		driver.findElement(By.cssSelector("a[href*='questions/"+questionNumber+"']")).click();;
+	}
+
+	public void navigateBetweenQuestions() {
+		wait.until(ExpectedConditions.elementToBeClickable(NextQuestionBtn));
+		driver.findElement(NextQuestionBtn).click();
+		wait.until(ExpectedConditions.elementToBeClickable(PreviousQuestionBtn));
+		driver.findElement(PreviousQuestionBtn).click();
+	}
+
+	public boolean verifyDateAndTime() {
+		LocalDateTime localTime = LocalDateTime.now();   
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy, hh:");  	
+		String timestamp = localTime.format(formatter);
+	   
+		System.out.println("Local Time is: "+timestamp); 
+	    
+	    return driver.findElement(By.xpath("//time[contains(text(),'"+timestamp+"')]")).isDisplayed();     
 	}
 }

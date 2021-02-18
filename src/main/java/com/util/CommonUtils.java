@@ -12,19 +12,19 @@ public class CommonUtils {
 		String url = null;
 		
 		if(env.equals("Production")) {
-			url = "https://b.socrative.com/teacher/";
+			url = "b";
 		}
 		else if(env.equals("QA")) {
-			url = "https://my-qa.socrative.com/teacher/";
+			url = "my-qa";
 		}
 		else if(env.equals("Development")) {
-			url = "https://my-dev.socrative.com/teacher/";
+			url = "my-dev";
 		}
 		else {
 			System.out.println("Please enter correct Environment: "+env);
 		}
 		
-		return url;
+		return "https://"+url+".socrative.com/teacher/";
 	}
 	
 }
