@@ -1,15 +1,15 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "5cd843e9-5767-4f82-8e8c-cdb2b7ca3201",
+    "id": "e59f6955-91e3-4611-9a5a-abf38e97edb1",
     "feature": "Smoke Test for Socrative Application",
     "scenario": "Smoke Test for Socrative",
-    "start": 1613608494363,
+    "start": 1613697657665,
     "group": 1,
     "content": "",
     "tags": "@smoke,",
-    "end": 1613608529451,
-    "className": "failed"
+    "end": 1613697667171,
+    "className": "passed"
   }
 ]);
 CucumberHTML.timelineGroups.pushArray([

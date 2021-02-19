@@ -1,10 +1,5 @@
 package com.pages;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -12,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.util.CommonUtils;
 import com.util.ConfigReader;
 
 public class ReportsPage {
@@ -20,6 +16,7 @@ public class ReportsPage {
 	private WebDriverWait wait;
 	private Properties prop;
 	
+	private By reportsTab = By.xpath(("//span[text()='Reports']"));
 	private By FinishBtn = By.xpath("//div[contains(text(),'Finish')]");
 	private By ShowNamesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
 	private By ShowResponsesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
@@ -45,7 +42,7 @@ public class ReportsPage {
 
 	public void clickOnButton(String button) 
 	{
-		By BackToResultsTabBtn = By.xpath("//div[contains(text(),'"+button+"')])]");
+		By BackToResultsTabBtn = By.xpath("//div[contains(text(),'"+button+"')]/parent::*");
 		driver.findElement(BackToResultsTabBtn).click();
 		
 	}
@@ -57,17 +54,9 @@ public class ReportsPage {
 	public void navigateBetweenQuestions() {
 		wait.until(ExpectedConditions.elementToBeClickable(NextQuestionBtn));
 		driver.findElement(NextQuestionBtn).click();
+		driver.findElement(NextQuestionBtn).click();
 		wait.until(ExpectedConditions.elementToBeClickable(PreviousQuestionBtn));
 		driver.findElement(PreviousQuestionBtn).click();
 	}
 
-	public boolean verifyDateAndTime() {
-		LocalDateTime localTime = LocalDateTime.now();   
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy, hh:");  	
-		String timestamp = localTime.format(formatter);
-	   
-		System.out.println("Local Time is: "+timestamp); 
-	    
-	    return driver.findElement(By.xpath("//time[contains(text(),'"+timestamp+"')]")).isDisplayed();     
-	}
 }

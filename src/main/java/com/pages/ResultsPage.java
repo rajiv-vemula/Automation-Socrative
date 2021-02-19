@@ -17,9 +17,10 @@ public class ResultsPage {
 	private WebDriverWait wait;
 	private Properties prop;
 	
+	private By resultsTab = By.xpath(("//span[text()='Results']"));
 	private By animatedWifiSymbol = By.cssSelector(".animated-wifi-symbol");
 	private By wifiSymbol = By.cssSelector(".wifi-symbol");
-	private By FinishBtn = By.xpath("//div[contains(text(),'Finish')]");
+	private By FinishBtn = By.xpath("//*[contains(text(),'Finish')]");
 	private By ShowNamesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
 	private By ShowResponsesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
 	private By ShowResultsToggle = By.xpath("//span[contains(text() ,'Show Names')]");
@@ -33,7 +34,9 @@ public class ResultsPage {
 	private By NamesAscending = By.xpath("//span[contains(text(),'ascending')]");
 	private By ShareBtn = By.xpath("//div[contains(text(),'Share')]");
 	private By ExportBtn = By.xpath("//div[contains(text(),'Export')]");
-	
+	private By launchActivityBtn = By.xpath("//button[text()='Launch Activity']");
+	private By closeActivityOKBtn = By.xpath("//button[text() = 'OK']");
+	private By spaceRaceHeaderName = By.cssSelector(".space-race-header-text");
 	
 	public ResultsPage(WebDriver driver)
 	{
@@ -116,6 +119,31 @@ public class ResultsPage {
 	{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ExportBtn));
 		return driver.findElement(ExportBtn).isDisplayed();
+	}
+
+	public void clickOnResultsTab() {
+		wait.until(ExpectedConditions.elementToBeClickable(resultsTab));
+		driver.findElement(resultsTab).click();
+	}
+
+	public void clickOnLaunchActivity() {
+		wait.until(ExpectedConditions.elementToBeClickable(launchActivityBtn));
+		driver.findElement(launchActivityBtn).click();
+	}
+
+	public boolean verifySpaceRaceSettings() {
+		By sections = By.cssSelector(".rocket-wrap");
+		int size = driver.findElements(sections).size();
+		return prop.getProperty("noOfTeams").equals(String.valueOf(size));
+	}
+
+	public void clickOnOKButton() {
+		wait.until(ExpectedConditions.elementToBeClickable(closeActivityOKBtn));
+		driver.findElement(closeActivityOKBtn).click();
+	}
+
+	public String verifySpaceRaceHeaderName() {
+		return driver.findElement(spaceRaceHeaderName).getText();
 	}
 	
 }

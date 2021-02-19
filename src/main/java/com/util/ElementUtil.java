@@ -1,5 +1,8 @@
 package com.util;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,6 +34,16 @@ public class ElementUtil {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(controlTab)); 
 		System.out.println(driver.findElement(controlTab).getText());
 		return driver.findElement(controlTab).getText().equals(page.toUpperCase());
+	}
+	
+	public boolean verifyDateAndTime() {
+		LocalDateTime localTime = LocalDateTime.now();   
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy, h:");  	
+		String timestamp = localTime.format(formatter);
+	   
+		System.out.println("Local Time is: "+timestamp);
+		
+	    return driver.findElement(By.xpath("//time[contains(text(),'"+timestamp+"')]")).isDisplayed();     
 	}
 
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import com.Factory.DriverFactory;
 import com.pages.ReportsPage;
 import com.pages.ResultsPage;
+import com.util.ElementUtil;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,6 +47,7 @@ public class ReportsPageSteps {
 	@Then("Teacher verifies the date and time of the Report in the page")
 	public void teacher_verifies_the_date_and_time_of_the_report_in_the_page()
 	{
-		Assert.assertTrue(reportsPage.verifyDateAndTime());
+		ElementUtil ele = new ElementUtil(driver);
+		Assert.assertTrue(ele.verifyDateAndTime());
 	}
 }

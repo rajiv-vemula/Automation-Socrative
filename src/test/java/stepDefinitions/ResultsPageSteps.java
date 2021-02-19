@@ -59,25 +59,26 @@ public class ResultsPageSteps {
 	@When("Teacher clicks on Results Tab")
 	public void teacher_clicks_on_results_tab()
 	{
-		
+		resultsPage.clickOnResultsTab();
 	}
 	
 	@When("Teacher clicks on Launch Activity Button")
 	public void teacher_clicks_on_launch_activity_button()
 	{
-		
+		resultsPage.clickOnLaunchActivity();
 	}
 	
-	@Then("Teacher verifies Space Race is launched with all the functionalities")
-	public void teacher_verifies_space_race_is_launched_with_all_the_functionalities()
+	@Then("Teacher verifies {string} is launched with name and selected number of teams")
+	public void teacher_verifies_is_launched_with_name_and_selected_number_of_teams(String name)
 	{
-		
+		Assert.assertEquals(name, resultsPage.verifySpaceRaceHeaderName());
+		Assert.assertTrue(resultsPage.verifySpaceRaceSettings());
 	}
 	
 	@Then("Teacher clicks on OK to Confirm the Popup")
 	public void teacher_clicks_on_ok_to_confirm_the_popup()
 	{
-		
+		resultsPage.clickOnOKButton();
 	}
 
 }

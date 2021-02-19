@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-18T00:34:53Z" name="Default suite" finished-at="2021-02-18T00:35:37Z" duration-ms="43473">
+  <suite started-at="2021-02-19T01:20:57Z" name="Default suite" finished-at="2021-02-19T01:21:12Z" duration-ms="15184">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:stepDefinitions.ParallelRun@72035809]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-02-18T00:34:53Z" name="Default test" finished-at="2021-02-18T00:35:37Z" duration-ms="43473">
+    <test started-at="2021-02-19T01:20:57Z" name="Default test" finished-at="2021-02-19T01:21:12Z" duration-ms="15184">
       <class name="stepDefinitions.ParallelRun">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:stepDefinitions.ParallelRun@72035809]" started-at="2021-02-18T00:34:53Z" name="setUpClass" finished-at="2021-02-18T00:34:54Z" duration-ms="478" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:stepDefinitions.ParallelRun@72035809]" started-at="2021-02-19T01:20:57Z" name="setUpClass" finished-at="2021-02-19T01:20:57Z" duration-ms="405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:stepDefinitions.ParallelRun@72035809]" started-at="2021-02-18T00:34:54Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-02-18T00:35:29Z" duration-ms="35220" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:stepDefinitions.ParallelRun@72035809]" started-at="2021-02-19T01:20:57Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-02-19T01:21:07Z" duration-ms="9617" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,26 +27,10 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Too many pattern letters: d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Too many pattern letters: d
-at java.base/java.time.format.DateTimeFormatterBuilder.parseField(DateTimeFormatterBuilder.java:1960)
-at java.base/java.time.format.DateTimeFormatterBuilder.parsePattern(DateTimeFormatterBuilder.java:1742)
-at java.base/java.time.format.DateTimeFormatterBuilder.appendPattern(DateTimeFormatterBuilder.java:1710)
-at java.base/java.time.format.DateTimeFormatter.ofPattern(DateTimeFormatter.java:565)
-at com.pages.ReportsPage.verifyDateAndTime(ReportsPage.java:74)
-at stepDefinitions.ReportsPageSteps.teacher_verifies_the_date_and_time_of_the_report_in_the_page(ReportsPageSteps.java:48)
-at ✽.Teacher verifies the date and time of the Report in the page(file:///Users/rajivvemula/SeleniumBVT/Automation-Socrative/src/java/resources/Features/SmokeTest.feature:89)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:stepDefinitions.ParallelRun@72035809]" started-at="2021-02-18T00:35:29Z" name="tearDownClass" finished-at="2021-02-18T00:35:37Z" duration-ms="7761" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:stepDefinitions.ParallelRun@72035809]" started-at="2021-02-19T01:21:07Z" name="tearDownClass" finished-at="2021-02-19T01:21:12Z" duration-ms="5152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

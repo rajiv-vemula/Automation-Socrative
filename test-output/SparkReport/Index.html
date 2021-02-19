@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Socrative Application Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb. 17, 2021 05:34:53 p.m.</span></a>
+<a href="#"><span class="badge badge-primary">Feb. 18, 2021 06:20:57 p.m.</span></a>
 </li>
 </ul>
 </div>
@@ -57,11 +57,6 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
-</a>
-</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -71,25 +66,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb. 17, 2021 05:34:53 p.m.</h3>
+<h3>Feb. 18, 2021 06:20:57 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb. 17, 2021 05:35:29 p.m.</h3>
+<h3>Feb. 18, 2021 06:21:07 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -105,12 +100,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> features passed
+<div><small data-tooltip='100%'>
+<b>1</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>1</b> features failed,
+<small data-tooltip='0%'><b>0</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -128,9 +123,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='100%'><b>1</b> scenarios failed,
+<small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -148,10 +143,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='58%'><b>57</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
 <div>
-<small data-tooltip='1%'><b>1</b> steps failed,
-<b>40</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Smoke Test for Socrative Application":35.049
+"Smoke Test for Socrative Application":9.476
 };
 </script>
 <div class="row">
@@ -178,11 +173,11 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@Smoke</td>
-<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0%</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 </tbody>
 </table></div>
@@ -219,21 +214,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 1,
+passParent: 1,
+failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 0,
-failChild: 1,
+passChild: 1,
+failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 57,
-failGrandChild: 1,
+passGrandChild: 5,
+failGrandChild: 0,
 warningGrandChild: 0,
-skipGrandChild: 40,
+skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -247,7 +242,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -261,25 +256,25 @@ eventsCount: 5,
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Smoke Test for Socrative Application</p>
             <p class="text-sm">
-              <span>17:34:54 p.m.</span> / <span>00:00:35:049</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>18:20:57 p.m.</span> / <span>00:00:09:476</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Smoke Test for Socrative Application</h5>
-<span class='badge badge-success'>02.17.2021 17:34:54</span>
-<span class='badge badge-danger'>02.17.2021 17:35:29</span>
-<span class='badge badge-default'>00:00:35:049</span>
+<h5 class="test-status text-pass">Smoke Test for Socrative Application</h5>
+<span class='badge badge-success'>02.18.2021 18:20:57</span>
+<span class='badge badge-danger'>02.18.2021 18:21:07</span>
+<span class='badge badge-default'>00:00:09:476</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -289,13 +284,10 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Smoke Test for Socrative</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Smoke Test for Socrative</div>
       </div>
     </div>
-        <div class="">
+        <div class="collapse">
           <div class="card-body">
               <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_navigates_to_socrative_login_page()">
                 <span>Given Teacher navigates to Socrative Login Page</span>
@@ -312,496 +304,15 @@ eventsCount: 5,
       <div>
       </div>
               </div>
+              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_navigates_to_socrative_login_page()">
+                <span>When Student navigates to Socrative Login Page</span>
+      <div>
+      </div>
+              </div>
               <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_enters_email_and_password(io.cucumber.datatable.DataTable)">
                 <span>When Teacher enters Email and Password</span>
-      <div><table class='markup-table table '><tr><td>rajiv+qa@showbie.com</td><td>92cktaYV@</td></tr></table>
+      <div><table class='markup-table table '><tr><td>rajiv@showbie.com</td><td>92cktaYV@</td></tr></table>
       </div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_clicks_on_sign_in_button()">
-                <span>When Teacher clicks on Sign In Button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_views_the_socrative_home_page()">
-                <span>Then Teacher views the Socrative Home Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_rooms_tab()">
-                <span>When Teacher clicks on Rooms Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_views_rooms_page(java.lang.String)">
-                <span>Then Teacher views "Rooms" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_add_room()">
-                <span>When Teacher clicks on Add Room</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_enters_the_room_name_and_clicks_on_add()">
-                <span>And Teacher enters the Room Name and clicks on Add</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_verifies_room_added_message_and_room_name_in_the_page()">
-                <span>Then Teacher verifies Room Added Message and Room Name in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_the_room_name_and_confirms_the_popup()">
-                <span>When Teacher clicks on the Room Name and confirms the Popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_verifies_room_name_is_displayed_on_the_centre_of_page()">
-                <span>And Teacher verifies Room Name is displayed on the centre of page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_quizzes_tab()">
-                <span>When Teacher clicks on Quizzes Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_page(java.lang.String)">
-                <span>Then Teacher views the "Quizzes" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_add_quiz_and_create_new()">
-                <span>When Teacher clicks on Add Quiz and Create New</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_default_name_toggles_and_question_types_in_the_page()">
-                <span>Then Teacher views the default name, toggles and question types in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_quiz_name()">
-                <span>When Teacher enters the Quiz Name</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_multiple_choice_question_type()">
-                <span>And Teacher clicks on Multiple Choice Question Type</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_mc_type_with_all_the_default_options()">
-                <span>Then Teacher views the MC Type with all the default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_multiple_choice_question()">
-                <span>When Teacher enters Multiple Choice Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_options_answers_for_the_question()">
-                <span>And Teacher enters the Options/Answers for the question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_chooses_right_answer_for_mc_question()">
-                <span>And Teacher chooses right answer for MC Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_question_button()">
-                <span>And Teacher clicks on Save Question button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_multiple_choice_question_is_saved_into_quiz()">
-                <span>Then Teacher views the Multiple Choice Question is Saved into Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_add_a_question_text_with_question_types(java.lang.String)">
-                <span>And Teacher views "Add a Question" text with Question Types</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_true_false_question()">
-                <span>When Teacher clicks on True/False Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_tf_type_with_all_the_default_options()">
-                <span>Then Teacher views the TF Type with all the default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teachers_enters_the_true_false_question()">
-                <span>When Teachers enters the True/False Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_selects_the_correct_option()">
-                <span>And Teacher selects the correct option</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_explanation_for_the_tf_question()">
-                <span>And Teacher enters the Explanation for the TF Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_question_button()">
-                <span>And Teacher clicks on Save Question button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_true_false_question_is_added_into_quiz()">
-                <span>Then Teacher views the True/False Question is Added into Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_short_answer_question()">
-                <span>When Teacher clicks on Short Answer Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_sa_type_with_all_the_default_options()">
-                <span>Then Teacher views the SA Type with all the default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_short_answer_question()">
-                <span>When Teacher enters the Short Answer Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_correct_answers_for_sa_question()">
-                <span>And Teacher enters the correct answers for SA Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_question_button()">
-                <span>And Teacher clicks on Save Question button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_sa_question_is_saved_into_quiz()">
-                <span>Then Teacher views the SA Question is saved into Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_and_exit_button_to_save_the_quiz()">
-                <span>When Teacher clicks on Save and Exit Button to Save the Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_quiz_is_saved_in_the_top_of_the_quiz_list_in_quizzes_tab()">
-                <span>Then Teacher views the Quiz is saved in the top of the Quiz List in Quizzes Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_launch_tab()">
-                <span>When Teacher clicks on Launch Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_quiz()">
-                <span>When Teacher clicks on Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_quiz_from_the_list_and_click_on_next()">
-                <span>And Teacher selects the Quiz from the list and click on Next</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_enters_the_delivery_method_and_settings(java.lang.String)">
-                <span>And Teacher enters the Delivery Method as "Instant Feedback" and Settings</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_click_on_start_button_to_launch_a_quiz()">
-                <span>And Teacher click on Start Button to Launch a quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_quiz_name_show_names_responses_and_results_toggle_in_the_page()">
-                <span>And Teacher views the QuizName, Show Names, Responses and Results Toggle in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_popup_on_the_page(java.lang.String)">
-                <span>Then Teacher views the "Finish Activity?" Popup on the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_in_the_popup(java.lang.String)">
-                <span>When Teacher clicks on "Finish" Button in the Popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>Then Teacher verifies the activity is "InActive" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_toggles_share_and_export_button()">
-                <span>And Teacher views the Toggles, Share and Export Button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step fail-bg" title="stepDefinitions.ReportsPageSteps.teacher_verifies_the_date_and_time_of_the_report_in_the_page()">
-                <span>And Teacher verifies the date and time of the Report in the page</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.IllegalArgumentException: Too many pattern letters: d
-	at java.base/java.time.format.DateTimeFormatterBuilder.parseField(DateTimeFormatterBuilder.java:1960)
-	at java.base/java.time.format.DateTimeFormatterBuilder.parsePattern(DateTimeFormatterBuilder.java:1742)
-	at java.base/java.time.format.DateTimeFormatterBuilder.appendPattern(DateTimeFormatterBuilder.java:1710)
-	at java.base/java.time.format.DateTimeFormatter.ofPattern(DateTimeFormatter.java:565)
-	at com.pages.ReportsPage.verifyDateAndTime(ReportsPage.java:74)
-	at stepDefinitions.ReportsPageSteps.teacher_verifies_the_date_and_time_of_the_report_in_the_page(ReportsPageSteps.java:48)
-	at ✽.Teacher verifies the date and time of the Report in the page(file:///Users/rajivvemula/SeleniumBVT/Automation-Socrative/src/java/resources/Features/SmokeTest.feature:89)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ReportsPageSteps.teacher_clicks_on_the_question_from_results_grid(int)">
-                <span>When Teacher clicks on the 1st question from Results Grid</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ReportsPageSteps.teacher_views_the_question_with_buttons_for_respective_question_type()">
-                <span>Then Teacher views the question with buttons for respective question types</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ReportsPageSteps.teacher_navigates_between_questions()">
-                <span>When Teacher navigates between questions</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ReportsPageSteps.teacher_clicks_on_button_on_reports_page(java.lang.String)">
-                <span>And Teacher clicks on "Back To Results Table" button on Reports Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Reports" Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_results_tab()">
-                <span>When Teacher clicks on Results Tab</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_launch_activity_button()">
-                <span>And Teacher clicks on Launch Activity Button</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_short_answer_from_quick_question_section()">
-                <span>When Teacher clicks on Short Answer from Quick Question Section</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_sa_view_with_default_options()">
-                <span>Then Teacher verifies SA View with default options</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_enters_the_question_under_optional_question_section()">
-                <span>When Teacher enters the question under Optional Question Section</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_toggles_for_unlimited_responses_and_student_names()">
-                <span>And Teacher selects the toggles for Unlimited Responses and Student Names</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_click_on_start_button_to_launch_a_quiz()">
-                <span>And Teacher click on Start Button to Launch a quiz</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_views_the_text_with_current_date_and_time(java.lang.String)">
-                <span>And Teacher views the "Quick Question" text with current date and time</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_views_the_start_vote_show_answers_show_names_button()">
-                <span>And Teacher views the Start Vote, Show Answers, Show Names Buttons</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_popup_on_the_page(java.lang.String)">
-                <span>Then Teacher views the "Finish Activity?" Popup on the page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_in_the_popup(java.lang.String)">
-                <span>When Teacher clicks on "Finish" Button in the Popup</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>Then Teacher verifies the activity is "InActive" from Results Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_launch_tab()">
-                <span>When Teacher clicks on Launch Tab</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_space_race()">
-                <span>When Teacher clicks on Space Race</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_quiz_from_the_list_and_click_on_next()">
-                <span>And Teacher selects the Quiz from the list and click on Next</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_choose_the_space_race_settings_and_toggles()">
-                <span>And Teacher choose the Space Race Settings and Toggles</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_click_on_start_button_to_launch_a_quiz()">
-                <span>And Teacher click on Start Button to Launch a quiz</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_space_race_is_launched_with_all_the_functionalities()">
-                <span>And Teacher verifies Space Race is launched with all the functionalities</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_ok_to_confirm_the_popup()">
-                <span>And Teacher clicks on OK to Confirm the Popup</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Reports" Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "InActive" from Results Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_toggles_share_and_export_button()">
-                <span>And Teacher views the Toggles, Share and Export Button</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ProfilePageSteps.teacher_clicks_on_header_username_on_top_right_corner()">
-                <span>When Teacher clicks on Header username on top right corner</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ProfilePageSteps.teacher_clicks_on_sign_out_button()">
-                <span>And Teacher clicks on Sign Out Button</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ProfilePageSteps.teacher_verifies_popup_to_signout_of_application(java.lang.String)">
-                <span>Then Teacher verifies the "Please Confirm" popup to Signout of application</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.ProfilePageSteps.teacher_clicks_on_yes_in_the_popup()">
-                <span>When Teacher clicks on Yes in the Popup</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepDefinitions.LoginPageSteps.teacher_views_the_default_socrative_login_page()">
-                <span>Then Teacher views the default Socrative Login Page</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>stepDefinitions.SocrativeHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Smoke_Test_for_Socrative
-          <div class="row mb-3"><div class="col-md-3">
-    <img data-featherlight='../embedded1.png' src="../embedded1.png">
-    
-    </div></div>
-</div>
       <div>
       </div>
               </div>
@@ -831,7 +342,7 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log pass-bg'>1</span>
 </span>
 <p class="name">@Smoke</p>
 <p class="duration text-sm">1 tests</p>
@@ -839,7 +350,7 @@ eventsCount: 5,
 <div class="test-contents d-none">
 <div class="info">
 <h4>@Smoke</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -850,65 +361,13 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:34:54 p.m.</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:20:57 p.m.</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Smoke Test for Socrative</a>
 <div class="">
 <span class="badge badge-default">Smoke Test for Socrative Application.Smoke Test for Socrative</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">java.lang.IllegalArgumentException</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>java.lang.IllegalArgumentException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:35:28 p.m.</td>
-<td>
-<a href="#" class="linked" test-id='1' id='61'>And Teacher verifies the date and time of the Report in the page</a>
-<div class="">
-<span class="badge badge-default">Smoke Test for Socrative Application.Smoke Test for Socrative.And Teacher verifies the date and time of the Report in the page</span>
 </div>
 </td>
 </tr>
