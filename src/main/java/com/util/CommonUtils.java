@@ -2,12 +2,14 @@ package com.util;
 
 import java.util.Properties;
 
+import com.Factory.DriverFactory;
+
 public class CommonUtils {
 	
+	public static Properties prop = ConfigReader.init_prop();
 
 	public static String getURL(String person)
-	{
-		Properties prop = ConfigReader.init_prop();
+	{	
 		String env = prop.getProperty("environment");
 		String url = null;
 		
@@ -34,5 +36,10 @@ public class CommonUtils {
 		else return "Invalid Person" +person +" Please enter either Teacher or Student";
 	}
 	
-	
+	public static void getStudentDriver()
+	{
+		DriverFactory driverFactory = new DriverFactory();
+		String browser = prop.getProperty("StudentBrowser");
+		driverFactory.init_driver(browser);
+	}
 }

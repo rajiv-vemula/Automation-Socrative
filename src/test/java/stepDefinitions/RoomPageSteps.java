@@ -2,6 +2,7 @@ package stepDefinitions;
 
 
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -111,6 +112,7 @@ public class RoomPageSteps {
 	@Then("Teacher validates the student details in the Roster")
 	public void teacher_validates_the_student_details_in_the_roster()
 	{
+		driver.manage().window().setPosition(new Point(-150,-300));
 		Assert.assertTrue(roomPage.validateStudentDetailsInRoster());
 	}
 	

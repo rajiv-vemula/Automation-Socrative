@@ -51,6 +51,7 @@ public class RoomPage {
 	private By studentemail = By.cssSelector("input[placeholder = 'Email (optional)']");
 	private By studentDetails = By.className("student-data-wrapper");
 	
+	
 	public RoomPage(WebDriver driver)
 	{
 		this.driver = driver;
@@ -208,12 +209,10 @@ public class RoomPage {
 		String email = prop.getProperty("student1Email");
 		
 		//String details = driver.findElement(studentDetails).getText();
-		//System.out.println(details);
 		String k = driver.findElement(By.className("last-name")).getText();
 		System.out.println(k.contains(firstName));
 		System.out.println(k);
-		
-		
+			
 		//return details.contains(firstName) && details.contains(lastName) && details.contains(ID) && details.contains(email);
 	return true;
 	}

@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 import com.Factory.DriverFactory;
 import com.pages.ResultsPage;
-import com.util.ElementUtil;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -79,6 +77,12 @@ public class ResultsPageSteps {
 	public void teacher_clicks_on_ok_to_confirm_the_popup()
 	{
 		resultsPage.clickOnOKButton();
+	}
+	
+	@Then("Teacher validates the Student Responses")
+	public void teacher_validates_the_student_responses()
+	{
+		Assert.assertTrue(resultsPage.validateStudentResponses());
 	}
 
 }

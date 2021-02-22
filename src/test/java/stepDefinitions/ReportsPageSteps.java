@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 import com.Factory.DriverFactory;
 import com.pages.ReportsPage;
-import com.pages.ResultsPage;
 import com.util.ElementUtil;
 
 import io.cucumber.java.en.Then;

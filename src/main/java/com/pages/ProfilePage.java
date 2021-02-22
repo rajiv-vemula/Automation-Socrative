@@ -2,6 +2,7 @@ package com.pages;
 
 import java.util.Properties;
 
+import org.apache.commons.math3.analysis.function.Exp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -17,7 +18,7 @@ public class ProfilePage {
 	private Properties prop;
 	
 	
-	By headerUserName = By.id("header-user-name");
+	By headerUserName = By.cssSelector("div[id='header-user-name'] span");
 	By profileBtn = By.xpath("//li[contains(text(),'PROFILE')]");
 	By helpTopicsBtn = By.xpath("//li[contains(text(),'HELP TOPICS')]");
 	By contactSocrativeBtn = By.xpath("//li[contains(text(),'CONTACT SOCRATIVE')]");
@@ -84,6 +85,7 @@ public class ProfilePage {
 
 
 	public void clickOnHeaderUsername() {
+		wait.until(ExpectedConditions.elementToBeClickable(headerUserName));
 		driver.findElement(headerUserName).click();
 	}
 

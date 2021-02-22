@@ -3,7 +3,6 @@ package stepDefinitions;
 import java.util.List;
 
 import org.junit.Assert;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import com.Factory.DriverFactory;
 import com.pages.LoginPage;
@@ -27,6 +26,7 @@ public class LoginPageSteps {
 	
 	@Given("Teacher navigates to Socrative Login Page")
 	public void teacher_navigates_to_socrative_login_page() {
+		//driver.manage().window().setPosition(new Point(-150,-300));
 		driver.get(CommonUtils.getURL("Teacher"));
 	}
 
@@ -34,7 +34,6 @@ public class LoginPageSteps {
 	public void teacher_enters_email_and_password(DataTable dataTable) throws InterruptedException {
 		List<List<String>> loginList = dataTable.asLists(String.class);	
 		
-		driver.manage().window().setPosition(new Point(-300,-200));
 		loginPage.enterEmail(loginList.get(0).get(0));
 		loginPage.enterPassword(loginList.get(0).get(1));	
 	}

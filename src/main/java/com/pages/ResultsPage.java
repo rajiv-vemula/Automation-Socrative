@@ -145,5 +145,13 @@ public class ResultsPage {
 	public String verifySpaceRaceHeaderName() {
 		return driver.findElement(spaceRaceHeaderName).getText();
 	}
+
+	public boolean validateStudentResponses() {
+		By response1 = By.xpath("//span[text()='"+prop.getProperty("student1Answer1")+"']");
+		By response2 = By.xpath("//span[text()='"+prop.getProperty("student1Answer1")+"']");
+		By response3 = By.xpath("//span[text()='"+prop.getProperty("student1Answer1")+"']");
+		
+		return driver.findElement(response1).isDisplayed() && driver.findElement(response2).isDisplayed() && driver.findElement(response3).isDisplayed();
+	}
 	
 }
