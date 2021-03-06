@@ -211,7 +211,9 @@ Feature: Smoke Test for Socrative Application
     
     #TODO
     #Retrieve and validate an existing report from Reports Page
+    
     #Verify the Teacher Account Profile
+    
     #Export and Share Functionalities
     #MC,TF, Exit Ticket
     #Add Students in Roster by Excel

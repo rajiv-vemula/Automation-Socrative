@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Socrative Application Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb. 19, 2021 03:08:27 p.m.</span></a>
+<a href="#"><span class="badge badge-primary">Mar. 5, 2021 05:16:11 p.m.</span></a>
 </li>
 </ul>
 </div>
@@ -57,6 +57,11 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -66,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb. 19, 2021 03:08:27 p.m.</h3>
+<h3>Mar. 5, 2021 05:16:11 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb. 19, 2021 03:09:37 p.m.</h3>
+<h3>Mar. 5, 2021 05:17:07 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -100,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -123,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>141</b> steps passed</small></div>
+<div><small data-tooltip='70%'><b>24</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='2%'><b>1</b> steps failed,
+<b>9</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -162,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Smoke Test for Socrative Application":69.052
+"Smoke Test for Showbie Application":54.756
 };
 </script>
 <div class="row">
@@ -173,11 +178,11 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@Smoke</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -214,21 +219,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 141,
-failGrandChild: 0,
+passGrandChild: 24,
+failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 9,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -242,7 +247,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -256,25 +261,25 @@ eventsCount: 5,
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Smoke Test for Socrative Application</p>
+            <p class="name">Smoke Test for Showbie Application</p>
             <p class="text-sm">
-              <span>15:08:28 p.m.</span> / <span>00:01:09:052</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>17:16:12 p.m.</span> / <span>00:00:54:756</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Smoke Test for Socrative Application</h5>
-<span class='badge badge-success'>02.19.2021 15:08:28</span>
-<span class='badge badge-danger'>02.19.2021 15:09:37</span>
-<span class='badge badge-default'>00:01:09:052</span>
+<h5 class="test-status text-fail">Smoke Test for Showbie Application</h5>
+<span class='badge badge-success'>03.05.2021 17:16:12</span>
+<span class='badge badge-danger'>03.05.2021 17:17:07</span>
+<span class='badge badge-default'>00:00:54:756</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -284,715 +289,218 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Smoke Test for Socrative</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Smoke Test for Showbie</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_navigates_to_socrative_login_page()">
-                <span>Given Teacher navigates to Socrative Login Page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_navigates_to_showbie_login_page()">
+                <span>Given Teacher navigates to Showbie Login Page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_views_the_default_socrative_login_page()">
-                <span>Then Teacher views the default Socrative Login Page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_the_default_showbie_login_page(java.lang.String)">
+                <span>Then Teacher views the default Showbie "Sign In" Page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_views_the_reset_password_and_create_account_links(java.lang.String,java.lang.String)">
-                <span>And Teacher views the "Reset password" and "Create account" Links</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_enters_email_and_password(io.cucumber.datatable.DataTable)">
-                <span>When Teacher enters Email and Password</span>
-      <div><table class='markup-table table '><tr><td>rajiv@showbie.com</td><td>92cktaYV@</td></tr></table>
-      </div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_clicks_on_sign_in_button()">
-                <span>And Teacher clicks on Sign In Button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginPageSteps.teacher_views_the_socrative_home_page()">
-                <span>Then Teacher views the Socrative Home Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_rooms_tab()">
-                <span>When Teacher clicks on Rooms Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_views_rooms_page(java.lang.String)">
-                <span>Then Teacher views "Rooms" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_add_room()">
-                <span>When Teacher clicks on Add Room</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_enters_the_room_name_and_clicks_on_add()">
-                <span>And Teacher enters the Room Name and clicks on Add</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_verifies_room_added_message_and_room_name_in_the_page()">
-                <span>Then Teacher verifies Room Added Message and Room Name in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_the_room_name_and_confirms_the_popup()">
-                <span>When Teacher clicks on the Room Name and confirms the Popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_verifies_room_name_is_displayed_on_the_centre_of_page()">
-                <span>And Teacher verifies Room Name is displayed on the centre of page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_quizzes_tab()">
-                <span>When Teacher clicks on Quizzes Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_page(java.lang.String)">
-                <span>Then Teacher views the "Quizzes" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_add_quiz_and_create_new()">
-                <span>When Teacher clicks on Add Quiz and Create New</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_default_name_toggles_and_question_types_in_the_page()">
-                <span>Then Teacher views the default name, toggles and question types in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_quiz_name()">
-                <span>When Teacher enters the Quiz Name</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_multiple_choice_question_type()">
-                <span>And Teacher clicks on Multiple Choice Question Type</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_mc_type_with_all_the_default_options()">
-                <span>Then Teacher views the MC Type with all the default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_multiple_choice_question()">
-                <span>When Teacher enters Multiple Choice Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_options_answers_for_the_question()">
-                <span>And Teacher enters the Options/Answers for the question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_chooses_right_answer_for_mc_question()">
-                <span>And Teacher chooses right answer for MC Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_question_button()">
-                <span>And Teacher clicks on Save Question button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_multiple_choice_question_is_saved_into_quiz()">
-                <span>Then Teacher views the Multiple Choice Question is Saved into Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_add_a_question_text_with_question_types(java.lang.String)">
-                <span>And Teacher views "Add a Question" text with Question Types</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_true_false_question()">
-                <span>When Teacher clicks on True/False Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_tf_type_with_all_the_default_options()">
-                <span>Then Teacher views the TF Type with all the default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teachers_enters_the_true_false_question()">
-                <span>When Teachers enters the True/False Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_selects_the_correct_option()">
-                <span>And Teacher selects the correct option</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_explanation_for_the_tf_question()">
-                <span>And Teacher enters the Explanation for the TF Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_question_button()">
-                <span>And Teacher clicks on Save Question button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_true_false_question_is_added_into_quiz()">
-                <span>Then Teacher views the True/False Question is Added into Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_short_answer_question()">
-                <span>When Teacher clicks on Short Answer Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_sa_type_with_all_the_default_options()">
-                <span>Then Teacher views the SA Type with all the default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_short_answer_question()">
-                <span>When Teacher enters the Short Answer Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_enters_the_correct_answers_for_sa_question()">
-                <span>And Teacher enters the correct answers for SA Question</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_question_button()">
-                <span>And Teacher clicks on Save Question button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_sa_question_is_saved_into_quiz()">
-                <span>Then Teacher views the SA Question is saved into Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_clicks_on_save_and_exit_button_to_save_the_quiz()">
-                <span>When Teacher clicks on Save and Exit Button to Save the Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.QuizzesPageSteps.teacher_views_the_quiz_is_saved_in_the_top_of_the_quiz_list_in_quizzes_tab()">
-                <span>Then Teacher views the Quiz is saved in the top of the Quiz List in Quizzes Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_launch_tab()">
-                <span>When Teacher clicks on Launch Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_quiz()">
-                <span>When Teacher clicks on Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_quiz_from_the_list_and_click_on_next()">
-                <span>And Teacher selects the Quiz from the list and click on Next</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_enters_the_delivery_method_and_settings(java.lang.String)">
-                <span>And Teacher enters the Delivery Method as "Instant Feedback" and Settings</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_click_on_start_button_to_launch_a_quiz()">
-                <span>And Teacher click on Start Button to Launch a quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_quiz_name_show_names_responses_and_results_toggle_in_the_page()">
-                <span>And Teacher views the QuizName, Show Names, Responses and Results Toggle in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_popup_on_the_page(java.lang.String)">
-                <span>Then Teacher views the "Finish Activity?" Popup on the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_in_the_popup(java.lang.String)">
-                <span>When Teacher clicks on "Finish" Button in the Popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>Then Teacher verifies the activity is "InActive" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_toggles_share_and_export_button()">
-                <span>And Teacher views the Toggles, Share and Export Button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ReportsPageSteps.teacher_verifies_the_date_and_time_of_the_report_in_the_page()">
-                <span>And Teacher verifies the date and time of the Report in the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ReportsPageSteps.teacher_clicks_on_the_question_from_results_grid(int)">
-                <span>When Teacher clicks on the 1st question from Results Grid</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ReportsPageSteps.teacher_views_the_question_with_buttons_for_respective_question_type()">
-                <span>Then Teacher views the question with buttons for respective question types</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ReportsPageSteps.teacher_navigates_between_questions()">
-                <span>When Teacher navigates between questions</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ReportsPageSteps.teacher_clicks_on_button_on_reports_page(java.lang.String)">
-                <span>And Teacher clicks on "Back to Results Table" button on Reports Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Reports" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_results_tab()">
-                <span>When Teacher clicks on Results Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_launch_activity_button()">
-                <span>And Teacher clicks on Launch Activity Button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_short_answer_from_quick_question_section()">
-                <span>When Teacher clicks on Short Answer from Quick Question Section</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_sa_view_with_default_options()">
-                <span>Then Teacher verifies SA View with default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_enters_the_question_under_optional_question_section()">
-                <span>When Teacher enters the question under Optional Question Section</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_toggles_for_and(java.lang.String,java.lang.String)">
-                <span>And Teacher selects the toggles for "Allow unlimited responses" and "Require student names"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_start_button_in_the_sa_box()">
-                <span>And Teacher clicks on Start Button in the SA Box</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_views_the_text_with_current_date_and_time(java.lang.String)">
-                <span>And Teacher views the "Quick Question" text with current date and time</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_views_the_buttons(java.lang.String,java.lang.String,java.lang.String)">
-                <span>And Teacher views the "Start Vote", "Show Answers", "Show Names" Buttons</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_popup_on_the_page(java.lang.String)">
-                <span>Then Teacher views the "Finish Activity?" Popup on the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_in_the_popup(java.lang.String)">
-                <span>When Teacher clicks on "Finish" Button in the Popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>Then Teacher verifies the activity is "InActive" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_launch_tab()">
-                <span>When Teacher clicks on Launch Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_space_race()">
-                <span>When Teacher clicks on Space Race</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_quiz_from_the_list_and_click_on_next()">
-                <span>And Teacher selects the Quiz from the list and click on Next</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_choose_the_space_race_settings_with_teams()">
-                <span>And Teacher choose the Space Race Settings with teams</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_click_on_start_button_to_launch_a_quiz()">
-                <span>And Teacher click on Start Button to Launch a quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_is_launched_with_name_and_selected_number_of_teams(java.lang.String)">
-                <span>And Teacher verifies "Space Race" is launched with name and selected number of teams</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_ok_to_confirm_the_popup()">
-                <span>And Teacher clicks on OK to Confirm the Popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Reports" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "InActive" from Results Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_toggles_share_and_export_button()">
-                <span>And Teacher views the Toggles, Share and Export Button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_rooms_tab()">
-                <span>When Teacher clicks on Rooms Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Rooms" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_roster_button_to_add_students()">
-                <span>When Teacher clicks on Roster button to add students</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_method_to_enter_the_students(java.lang.String)">
-                <span>And Teacher clicks on "Manual (Type In)" method to enter the students</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_views_title_window_to_select_number_of_students(java.lang.String)">
-                <span>Then Teacher views "Add Students" title window to select number of students</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_enters_the_number_of_students_to_add()">
-                <span>When Teacher enters the number of students to add</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_create_form()">
-                <span>And Teacher clicks on Create Form button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_views_the_modal_with_default_options()">
-                <span>Then Teacher views the modal with default options</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_enters_the_student_details_firstname_lastname_id_email()">
-                <span>When Teacher enters the student details - firstname, lastname, ID, email</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_clicks_on_button_in_the_form(java.lang.String)">
-                <span>And Teacher clicks on "Save" button in the form</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.RoomPageSteps.teacher_validates_the_student_details_in_the_roster()">
-                <span>Then Teacher validates the student details in the Roster</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_launch_tab()">
-                <span>When Teacher clicks on Launch Tab</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Launch" Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_clicks_on_quiz()">
-                <span>When Teacher clicks on Quiz</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_selects_the_quiz_from_the_list_and_click_on_next()">
-                <span>And Teacher selects the Quiz from the list and click on Next</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_enters_the_delivery_method_and_settings(java.lang.String)">
-                <span>And Teacher enters the Delivery Method as "Instant Feedback" and Settings</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_click_on_start_button_to_launch_a_quiz()">
-                <span>And Teacher click on Start Button to Launch a quiz</span>
-      <div>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_enters_showbie_username_and_password(io.cucumber.datatable.DataTable)">
+                <span>When Teacher enters Showbie username and Password</span>
+      <div><table class='markup-table table '><tr><td>rajiv+qa@showbie.com</td><td>92cktaYV@</td></tr></table>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LaunchPageSteps.teacher_verifies_control_is_in_the_page(java.lang.String)">
-                <span>Then Teacher verifies the control is in the "Results" Page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>And Teacher verifies the activity is "Active" from Results Page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_sign_in_button_in_showbie()">
+                <span>And Teacher clicks on Sign In Button in Showbie</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_quiz_name_show_names_responses_and_results_toggle_in_the_page()">
-                <span>And Teacher views the QuizName, Show Names, Responses and Results Toggle in the page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_the_showbie_home_page(java.lang.String)">
+                <span>Then Teacher views the Showbie Home Page with "My Showbie" text</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_navigates_to_socrative_login_page()">
-                <span>When Student navigates to Socrative Login Page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_wrench_button()">
+                <span>When Teacher clicks on Wrench Button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_window_in_the_page(java.lang.String)">
-                <span>Then Student views "Student Login" Window in the page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_new_class_button()">
+                <span>And Teacher clicks on New Class Button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_enters_the_room_name_and_click_on_join()">
-                <span>When Student enters the Room Name and click on Join</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_window_with_default_options(java.lang.String)">
+                <span>Then Teacher views "New Class" Window with default options</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_enters_the_student_id_and_clicks_on_submit()">
-                <span>And Student enters the Student ID and clicks on Submit</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_enters_the_class_name_in_new_class_field()">
+                <span>When Teacher enters the Class Name in New Class field</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_the_room_name_and_last_name_in_the_page()">
-                <span>Then Student views the Room Name and Last Name in the page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_save_button()">
+                <span>And Teacher clicks on Save button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_answers_the_first_question_in_the_quiz()">
-                <span>When Student answers the first question in the quiz</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_the_class_is_added_with_the_name()">
+                <span>Then Teacher views the Class is added with the name</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_submit_button()">
-                <span>And Student clicks on Submit Button</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_guide_tip_in_the_page(java.lang.String)">
+                <span>And Techer views "add an assignment" guide tip in the page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_the_feedback_container_with_question_correct_answer_and_explanation()">
-                <span>Then Student views the Feedback Container with Question, Correct Answer and Explanation</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_wrench_button()">
+                <span>When Teacher clicks on Wrench Button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_ok_in_the_feedback_box()">
-                <span>When Student clicks on OK in the Feedback Box</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_new_assignment_button()">
+                <span>And Teacher clicks on New Assignment button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_answers_the_second_question_in_the_quiz()">
-                <span>And Student answers the second question in the quiz</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_new_assignment_window_is_opened_with_default_options()">
+                <span>Then Teacher New Assignment Window is opened with default options</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_submit_button()">
-                <span>And Student clicks on Submit Button</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_enters_the_assignment_name_in_the_title()">
+                <span>When Teacher enters the Assignment name in the Title</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_the_feedback_container_with_question_correct_answer_and_explanation()">
-                <span>Then Student views the Feedback Container with Question, Correct Answer and Explanation</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_selects_the_due_date_student_access_and_schedule()">
+                <span>And Teacher selects the DueDate, Student Access and Schedule</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_ok_in_the_feedback_box()">
-                <span>When Student clicks on OK in the Feedback Box</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_save_button()">
+                <span>And Teacher clicks on Save button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_answers_the_third_question_in_the_quiz()">
-                <span>And Student answers the third question in the quiz</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_guide_tip_in_the_page(java.lang.String)">
+                <span>Then Techer views "press to view folders" guide tip in the page</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_submit_button()">
-                <span>And Student clicks on Submit Button</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_the_assignment_with_selected_settings_is_displayed_in_the_page_under_assigned()">
+                <span>And Teacher views the Assignment with selected settings is displayed in the page under Assigned</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_the_feedback_container_with_question_correct_answer_and_explanation()">
-                <span>Then Student views the Feedback Container with Question, Correct Answer and Explanation</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_the_assignment_name()">
+                <span>When Teacher clicks on the Assignment Name</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_ok_in_the_feedback_box()">
-                <span>When Student clicks on OK in the Feedback Box</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_views_the_assignment_name_and_folder(java.lang.String)">
+                <span>Then Teacher views the Assignment Name and "Shared Items" folder</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_the_activity_completed_text_in_the_page()">
-                <span>Then Student views the Activity Completed text in the page</span>
+              <div class="step pass-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_shared_items_folder()">
+                <span>When Teacher clicks on Shared Items folder</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_header_user_name()">
-                <span>When Student clicks on header user name</span>
+              <div class="step fail-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_verifies_page_with_textarea(java.lang.String,java.lang.String)">
+                <span>Then Teacher verifies "Shared Items" page with "Write a comment..." textarea</span>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"textarea[placeholder='Write a comment...']"}
+  (Session info: chrome=88.0.4324.192)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Rajivs-MacBook-Pro.local', ip: '2001:56a:f306:4200:89d:8fd:ea74:93c6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.192, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: /var/folders/h3/9rhxvzdj7_q...}, goog:chromeOptions: {debuggerAddress: localhost:49654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e1eee44cab1b8c69ed277802a6f8ba7c
+*** Element info: {Using=css selector, value=textarea[placeholder='Write a comment...']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.showbiePages.ShowbiePage.verifyTextArea(ShowbiePage.java:208)
+	at showbieStepDefinitions.ShowbiePageSteps.teacher_verifies_page_with_textarea(ShowbiePageSteps.java:135)
+	at ✽.Teacher verifies "Shared Items" page with "Write a comment..." textarea(file:///Users/rajivvemula/SeleniumBVT/Automation-Socrative/src/java/resources/Features/ShowbieSmokeTest.feature:42)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_button(java.lang.String)">
-                <span>And Student clicks on "LOG OUT" button</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_enters_the_post_in_the_comment_textarea()">
+                <span>When Teacher enters the post in the comment textarea</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_verifies_the_popup_to_signout_of_application(java.lang.String)">
-                <span>Then Student verifies the "Please Confirm" popup to Signout of application</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_post_button()">
+                <span>And Teacher clicks on Post button</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_clicks_on_yes_in_the_popup()">
-                <span>When Student clicks on Yes in the popup</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_validates_the_post_is_displayed_in_the_post_container()">
+                <span>Then Teacher validates the post is displayed in the post container</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_views_window_in_the_page(java.lang.String)">
-                <span>Then Student views "Student Login" Window in the page</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_button()">
+                <span>When Teacher clicks on + button</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.StudentPageSteps.student_closes_the_browser()">
-                <span>And Student closes the browser</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_new_document_button()">
+                <span>And Teacher clicks on New Document button</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_validates_the_student_responses()">
-                <span>Then Teacher validates the Student Responses</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_verifies_new_document_window_is_opened_with_default_settings()">
+                <span>Then Teacher verifies New Document Window is opened with default settings</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_on_results()">
-                <span>When Teacher clicks on Finish Button on results Page</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_enters_the_document_name_orientation_and_style()">
+                <span>When Teacher enters the Document Name, Orientation and Style</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_views_the_popup_on_the_page(java.lang.String)">
-                <span>Then Teacher views the "Finish Activity?" Popup on the page</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_clicks_on_create_button()">
+                <span>And Teacher clicks on Create button</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_clicks_on_finish_button_in_the_popup(java.lang.String)">
-                <span>When Teacher clicks on "Finish" Button in the Popup</span>
-      <div>
+              <div class="step skip-bg" title="showbieStepDefinitions.ShowbiePageSteps.teacher_validates_the_document_is_posted_in_the_post_container()">
+                <span>Then Teacher validates the document is posted in the Post container</span>
+      <div>Step skipped
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.ResultsPageSteps.teacher_verifies_the_activity_is_from_results_page(java.lang.String)">
-                <span>Then Teacher verifies the activity is "InActive" from Results Page</span>
+              <div class="step pass-bg" title="AFTER">
+                <span>showbieStepDefinitions.SocrativeHooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>Smoke_Test_for_Showbie
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -1022,7 +530,7 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">@Smoke</p>
 <p class="duration text-sm">1 tests</p>
@@ -1030,7 +538,7 @@ eventsCount: 5,
 <div class="test-contents d-none">
 <div class="info">
 <h4>@Smoke</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -1041,13 +549,65 @@ eventsCount: 5,
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>15:08:28 p.m.</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:16:12 p.m.</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Smoke Test for Socrative</a>
+<a href="#" class="linked" test-id='1' id='2'>Smoke Test for Showbie</a>
 <div class="">
-<span class="badge badge-default">Smoke Test for Socrative Application.Smoke Test for Socrative</span>
+<span class="badge badge-default">Smoke Test for Showbie Application.Smoke Test for Showbie</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:17:06 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='28'>Then Teacher verifies "Shared Items" page with "Write a comment..." textarea</a>
+<div class="">
+<span class="badge badge-default">Smoke Test for Showbie Application.Smoke Test for Showbie.Then Teacher verifies "Shared Items" page with "Write a comment..." textarea</span>
 </div>
 </td>
 </tr>
