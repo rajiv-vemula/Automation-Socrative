@@ -6,7 +6,7 @@ import com.Factory.DriverFactory;
 
 public class CommonUtils {
 	
-	public static Properties prop = ConfigReader.init_prop();
+	protected static Properties prop = ConfigReader.init_prop();
 
 	public static String getURL(String person)
 	{	

@@ -6,5 +6,4 @@
 *.html
 *.js
 *.gif
-/src/
 /test-output-thread/
