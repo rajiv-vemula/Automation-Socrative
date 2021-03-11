@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import com.Factory.DriverFactory;
+
+import com.factory.DriverFactory;
 import com.pages.LoginPage;
 import com.util.CommonUtils;
 
@@ -63,12 +64,6 @@ public class LoginPageSteps {
 	@When("Teacher clicks on {string} link")
 	public void teacher_clicks_on_sign_in_button(String link) {
 		loginPage.clickOnLink(link);
-	}
-	
-	@Then("Teacher views {string} page")
-	public void teacher_views_page(String page)
-	{
-		
 	}
 	
 }

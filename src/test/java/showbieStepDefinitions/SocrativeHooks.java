@@ -6,7 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.Factory.DriverFactory;
+import com.factory.DriverFactory;
 import com.util.ConfigReader;
 
 import io.cucumber.java.After;
@@ -21,14 +21,14 @@ public class SocrativeHooks {
 
 	@Before(order = 0)
 	public void getProperty() {
-		prop = ConfigReader.init_prop();
+		prop = ConfigReader.initProp();
 	}
 
 	@Before(order = 1)
 	public void launchBrowser() {
 		String browserName = prop.getProperty("TeacherBrowser");
 		driverFactory = new DriverFactory();
-		driver = driverFactory.init_driver(browserName);
+		driver = driverFactory.initDriver(browserName);
 		
 	}
 

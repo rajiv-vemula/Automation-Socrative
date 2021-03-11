@@ -1,4 +1,4 @@
-package com.Factory;
+package com.factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,10 +8,8 @@ import org.openqa.selenium.safari.SafariDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
-	
-	public WebDriver driver;
 
-	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+	public static final ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
 	/**
 	 * This method is used to initialize the threadlocal driver on the basis of given
@@ -20,7 +18,7 @@ public class DriverFactory {
 	 * @param browser
 	 * @return this will return tldriver.
 	 */
-	public WebDriver init_driver(String browser) {
+	public WebDriver initDriver(String browser) {
 
 		System.out.println("browser value is: " + browser);
 

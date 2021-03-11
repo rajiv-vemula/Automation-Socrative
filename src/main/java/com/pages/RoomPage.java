@@ -1,32 +1,32 @@
 package com.pages;
 
-
-import static com.sun.tools.javac.util.Assert.check;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.Assert;
 import com.util.ConfigReader;
+import com.util.ElementUtil;
+
+import pojo.Teacher;
+import pojo.Student;
 
 public class RoomPage {
 	
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private Properties prop;
-	private String RoomName;
+	private Teacher teacher;
+	private Student student;
 	
 	// Locators
 	private By roomsTab = By.xpath(("//span[text()='Rooms']"));
 	private By roomTitle = By.cssSelector(".page-title");
-	private By AddRoom = By.xpath("//button[text()='Add room']"); 
+	private By addRoom = By.xpath("//button[text()='Add room']"); 
 	private By addRoomWindow = By.xpath("//span[text()='Add Room']");
 	private By roomName = By.id("roomName");
 	private By addBtn = By.id("addRoomButton");
@@ -37,6 +37,8 @@ public class RoomPage {
 	private By popUpMessage = By.id("pop-up-message");
 	private By popUpYesBtn = By.xpath("//button[text()='Yes']");
 	private By popUpNoBtn = By.xpath("//button[text()='No']");
+	private By roomAddedMessage = By.xpath("//*[(text() = 'Room added!' or . = 'Room added')]");
+	private By roomDeletedMessage = By.xpath("//*[(text() = 'Room deleted!' or . = 'Room deleted')]");
 	
 	// Rostered Room
 	private By rosteredBtn = By.xpath("//li[contains(@class,'current-room')]//child::span[@class='roster-action-button']");
@@ -49,18 +51,16 @@ public class RoomPage {
 	private By studentFirstName = By.cssSelector("input[placeholder = 'First Name']");
 	private By studentID = By.cssSelector("input[placeholder = 'Student ID']");
 	private By studentemail = By.cssSelector("input[placeholder = 'Email (optional)']");
-	private By studentDetails = By.className("student-data-wrapper");
 	
 	
-	public RoomPage(WebDriver driver)
-	{
+	public RoomPage(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
-		prop = ConfigReader.init_prop();
-		RoomName = null;
+		prop = ConfigReader.initProp();
+		teacher = new Teacher();
+		student = new Student();
 	}
 
-	//Action Methods
 	public void clickRooms() {
 		wait.until(ExpectedConditions.presenceOfElementLocated(roomsTab));
 		driver.findElement(roomsTab).click();		
@@ -72,51 +72,47 @@ public class RoomPage {
 		return driver.findElement(roomTitle).getText();
 	}
 	
-	public void clickAddRoom()
-	{
-		driver.findElement(AddRoom).click();
+	public void clickAddRoom() {
+		wait.until(ExpectedConditions.elementToBeClickable(addRoom));
+		driver.findElement(addRoom).click();
 	}
 	
-	public void enterRoomName()
-	{
-		check(driver.findElement(addRoomWindow).isDisplayed());
+	public void enterRoomName() {
+		Assert.assertTrue(driver.findElement(addRoomWindow).isDisplayed());
 		wait.until(ExpectedConditions.presenceOfElementLocated(roomName));
 		driver.findElement(roomName).sendKeys(prop.getProperty("RoomName"));
 	}
 	
-	public void clickOnAddBtn()
-	{
+	public void clickOnAddBtn() {
 		try {
-		check(driver.findElement(addBtn).isDisplayed());
-		check(driver.findElement(cancelBtn).isDisplayed());
-		driver.findElement(addBtn).click();
-		verifyToolMessage();
-		
+			Assert.assertTrue(driver.findElement(addBtn).isDisplayed());
+			Assert.assertTrue(driver.findElement(cancelBtn).isDisplayed());
+			driver.findElement(addBtn).click();
+			verifyToolMessage();
 		}
-		catch(Exception e)
-		{
+		catch(Exception e) {
 			verifyToolMessage();	
 		}
 		
 	}
 	
-	public void verifyToolMessage()
-	{
+	public void verifyToolMessage() {
 		wait.until(ExpectedConditions.presenceOfElementLocated(toolTip));
 		if(driver.findElement(toolTip).isDisplayed())
 		{
-			check(driver.findElement(toolTip).getText().equals(prop.getProperty("ToolTipText")));		
+			Assert.assertTrue(driver.findElement(toolTip).getText().equals(prop.getProperty("ToolTipText")));		
 			driver.findElement(roomName).clear();
-			driver.findElement(roomName).sendKeys(prop.getProperty("RandomRoomName"));
+			
+			teacher.setRoomName(prop.getProperty("RandomRoomName"));
+			driver.findElement(roomName).sendKeys(teacher.getRoomName());
 			driver.findElement(addBtn).click();
 		}
 	}
 	
-	public boolean verifyRoomName()
-	{
-		RoomName = prop.getProperty("RandomRoomName").toUpperCase();
-		By EnteredRoomName = By.xpath("//span[contains(text(),'"+RoomName.toLowerCase()+"')]");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(EnteredRoomName));
+	public boolean verifyRoomName() {
+		teacher.setEnteredRoomName(By.xpath("//span[contains(text(),'"+teacher.getRoomName().toLowerCase()+"')]"));
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(teacher.getEnteredRoomName()));
 		List<WebElement> names = driver.findElements(roomNames);
 	
 		List<String> list = new ArrayList<>();
@@ -126,36 +122,29 @@ public class RoomPage {
 		}
 		
 		System.out.println("List of Room Names: "+list);
-		if(list.contains(RoomName)) {
-			return true;
-		}
-		else 
-			return false;
+		return list.contains(teacher.getRoomName().toUpperCase());
 	}
 	
+	public boolean verifyMessage() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(roomAddedMessage));
+		return driver.findElement(roomAddedMessage).isDisplayed();
+	}
 
-	public void clickOnRoom() 
-	{
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//span[text()='"+RoomName.toLowerCase()+"']")).click();			
+	public void clickOnRoom() {
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(roomAddedMessage));
+		driver.findElement(teacher.getEnteredRoomName()).click();
 	}
 	
-	public void confirmPopUp()
-	{
-		String message = "Are you sure you want to change to the "+RoomName+" room?";
-		check(driver.findElement(popUpTitle).getText().equals("Please Confirm"));
-		check(driver.findElement(popUpMessage).getText().equals(message));
-		check(driver.findElement(popUpNoBtn).isDisplayed());
+	public void confirmPopUp() {
+		String message = "Are you sure you want to change to the "+teacher.getRoomName().toUpperCase()+" room?";
+		Assert.assertTrue(driver.findElement(popUpTitle).getText().equals("Please Confirm"));
+		Assert.assertTrue(driver.findElement(popUpMessage).getText().equals(message));
+		Assert.assertTrue(driver.findElement(popUpNoBtn).isDisplayed());
 		driver.findElement(popUpYesBtn).click();
 	}
 	
-	public boolean verifyHeaderRoomName()
-	{
-		return driver.findElement(By.xpath("//span[text() = '"+RoomName.toLowerCase()+"']")).isDisplayed();
+	public boolean verifyHeaderRoomName() {
+		return driver.findElement(teacher.getEnteredRoomName()).isDisplayed();
 	}
 
 	public void clickOnRosterButton() {
@@ -187,34 +176,29 @@ public class RoomPage {
 	}
 
 	public void enterStudenDetails() {
-		String firstName = prop.getProperty("student1FirstName");
-		String lastName = prop.getProperty("student1LastName");
-		String ID = prop.getProperty("student1ID");
-		String email = prop.getProperty("student1Email");
 		
-		driver.findElement(studentLastName).sendKeys(lastName);
-		driver.findElement(studentFirstName).sendKeys(firstName);
-		driver.findElement(studentID).sendKeys(ID);
-		driver.findElement(studentemail).sendKeys(email);
+		student.setStudent1FirstName(prop.getProperty("student1FirstName"));
+		student.setStudent1LastName(prop.getProperty("student1LastName"));
+		student.setStudent1ID(prop.getProperty("student1ID"));
+		student.setStudent1Email(prop.getProperty("student1Email"));
+		
+		driver.findElement(studentLastName).sendKeys(student.getStudent1LastName());
+		driver.findElement(studentFirstName).sendKeys(student.getStudent1FirstName());
+		driver.findElement(studentID).sendKeys(student.getStudent1ID());
+		driver.findElement(studentemail).sendKeys(student.getStudent1Email());
 	}
 
 	public void clickOnButtonInForm(String button) {
-		driver.findElement(By.xpath("//button[text()='"+button+"']")).click();
+		driver.findElement(ElementUtil.getPath(button)).click();
 	}
 
 	public boolean validateStudentDetailsInRoster() {
-		String firstName = prop.getProperty("student1FirstName");
-		String lastName = prop.getProperty("student1LastName");
-		String ID = prop.getProperty("student1ID");
-		String email = prop.getProperty("student1Email");
-		
-		//String details = driver.findElement(studentDetails).getText();
-		String k = driver.findElement(By.className("last-name")).getText();
-		System.out.println(k.contains(firstName));
-		System.out.println(k);
+		By name = By.cssSelector("input[value='"+student.getStudent1LastName()+ ", "+student.getStudent1FirstName()+"']");
+		By id = By.cssSelector("input[value='"+student.getStudent1ID()+"']");
+		By email = By.cssSelector("input[value='"+student.getStudent1Email()+"']");
 			
-		//return details.contains(firstName) && details.contains(lastName) && details.contains(ID) && details.contains(email);
-	return true;
+		wait.until(ExpectedConditions.visibilityOfElementLocated(name));
+		return driver.findElement(name).isDisplayed() && driver.findElement(id).isDisplayed() && driver.findElement(email).isDisplayed();
 	}
 
 }

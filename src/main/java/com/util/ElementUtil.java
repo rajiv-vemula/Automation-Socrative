@@ -15,35 +15,37 @@ public class ElementUtil {
 	
 	private By controlTab = By.cssSelector(".selected span");
 	
-	public ElementUtil(WebDriver driver)
-	{
+	public ElementUtil(WebDriver driver) {
 		System.out.println("Element Util Contructor");
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
 	}
 	
-	public boolean verifyControlOnTab(String page)
-	{
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	public boolean verifyControlOnTab(String page) throws InterruptedException {
+		Thread.sleep(1000);	
 		wait.until(ExpectedConditions.visibilityOfElementLocated(controlTab)); 
 		System.out.println(driver.findElement(controlTab).getText());
-		return driver.findElement(controlTab).getText().equals(page.toUpperCase());
+		
+		return driver.findElement(controlTab).getText().equalsIgnoreCase(page);
 	}
 	
 	public boolean verifyDateAndTime() {
 		LocalDateTime localTime = LocalDateTime.now();   
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy, h:");  	
-		String timestamp = localTime.format(formatter);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy, h:");  
 	   
-		System.out.println("Local Time is: "+timestamp);
+		System.out.println("Local Time is: " + localTime.format(formatter));
 		
-	    return driver.findElement(By.xpath("//time[contains(text(),'"+timestamp+"')]")).isDisplayed();     
+		By timeOfReport = By.xpath("//time[contains(text(),'"+localTime.format(formatter)+"')]");
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(timeOfReport));
+	    return driver.findElement(timeOfReport).isDisplayed();     
 	}
 
+	public static By getPath(String ele) {
+		return By.xpath("//*[text()='"+ele+"']");
+	}
+	
+	public static By getliElementFromList(String ele) {
+		return By.xpath("//span[text()='"+ele+"']/parent::li");
+	}
 }

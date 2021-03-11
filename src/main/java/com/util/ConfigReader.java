@@ -1,32 +1,30 @@
 package com.util;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
 
-	private static Properties prop;
-
+	private ConfigReader()
+	{
+		throw new IllegalStateException("Config Reader class");
+	}
 	/**
 	 * This method is used to load the properties from config.properties file
 	 * @return it returns Properties object
 	 */
-	public static Properties init_prop() {
+	public static Properties initProp() {
 
-		prop = new Properties();
-		try {
-			FileInputStream ip = new FileInputStream("./src/java/resources/config/Config.properties");
+		Properties prop = new Properties();
+		
+		try(FileInputStream ip = new FileInputStream("./src/java/resources/config/Config.properties")){
 			prop.load(ip);
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} 
+		catch(Exception e)
+		{
 			e.printStackTrace();
 		}
-
+		
 		return prop;
-
 	}
 }

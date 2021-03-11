@@ -9,8 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				}, 
 		monochrome = true,
-		glue = { "showbieStepDefinitions" }
-		
+		glue = { "showbieStepDefinitions" }		
 )
 
 public class ShowbieTestRunner extends AbstractTestNGCucumberTests {

@@ -12,11 +12,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.sun.tools.javac.util.Assert;
 import com.util.ConfigReader;
 
+import pojo.Teacher;
+
 public class QuizzesPage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private Properties prop;
+	private Teacher teacher;
 	
 	
 	private By quizzesTab = By.xpath(("//span[text() = 'Quizzes']"));
@@ -35,13 +38,12 @@ public class QuizzesPage {
 	private By copyQuestion = By.cssSelector("button[aria-label='Copy Question']");
 	private By moveQuestionUp = By.cssSelector("button[aria-label='Move Question Up']");
 	private By moveQuestionDown = By.cssSelector("button[aria-label='Move Question Down']");
-	private By ExplanationTextBox = By.cssSelector("div[data-placeholder = 'An explanation, if you like.']");
-	private By QuestionImage = By.cssSelector("input[aria-label ='Question Image']");
-	private By ExplanationImage = By.cssSelector("input[aria-label ='Explanation Image']");
-	private By AddAnswerBtn = By.xpath("//*contains(text(),'Add Answer')");
-	private By SaveAndExitBtn = By.xpath("//*[contains(text() ,'Save and Exit')]");
-	//private By CorrectAnswerRadioBtn = By.cssSelector("input[aria-label='Correct']");
-	private By CorrectAnswerRadioBtn = By.cssSelector(".checkbox-icon");
+	private By explanationTextBox = By.cssSelector("div[data-placeholder = 'An explanation, if you like.']");
+	private By questionImage = By.cssSelector("input[aria-label ='Question Image']");
+	private By explanationImage = By.cssSelector("input[aria-label ='Explanation Image']");
+	private By addAnswerBtn = By.xpath("//*contains(text(),'Add Answer')");
+	private By saveAndExitBtn = By.xpath("//*[contains(text() ,'Save and Exit')]");
+	private By correctAnswerRadioBtn = By.cssSelector(".checkbox-icon");
 	private By addAQuestionText = By.xpath("//*[contains(text() ,'Add a Question')]");
 	
 	//Multiple Choice Question
@@ -75,21 +77,18 @@ public class QuizzesPage {
 	{
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
-		prop = ConfigReader.init_prop();
+		prop = ConfigReader.initProp();
+		teacher = new Teacher();
 	}
 	
-	public void clickOnQuizzesTab()
+	public void clickOnQuizzesTab() throws InterruptedException
 	{
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		Thread.sleep(400);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(quizzesTab));
 		driver.findElement(quizzesTab).click();
 	}
 	
-	public String verifyPageTitle(String title)
+	public String verifyPageTitle()
 	{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(pageTitle));
 		return driver.findElement(pageTitle).getText();
@@ -166,7 +165,7 @@ public class QuizzesPage {
 	
 	public void selectCorrectMCAnswer()
 	{
-		List<WebElement> elements = driver.findElements(CorrectAnswerRadioBtn);
+		List<WebElement> elements = driver.findElements(correctAnswerRadioBtn);
 		System.out.println("List of Web Elements"+elements);
 	
 		elements.get(2).click();
@@ -221,39 +220,39 @@ public class QuizzesPage {
 	
 	public void enterExplanationForTFQ()
 	{
-		driver.findElement(ExplanationTextBox).click();
-		driver.findElement(ExplanationTextBox).sendKeys(prop.getProperty("TFExplanation"));
+		driver.findElement(explanationTextBox).click();
+		driver.findElement(explanationTextBox).sendKeys(prop.getProperty("TFExplanation"));
 	}
 	
 	public void clickOnShortAnswerQuestion()
 	{
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		wait.until(ExpectedConditions.elementToBeClickable(ShortAnswerQuestionBtn));
-		System.out.println(ShortAnswerQuestionBtn.toString());
 		driver.findElement(ShortAnswerQuestionBtn).click();
 	}
 	
 	public boolean verifyQuestionView(String type)
 	{
 		WebElement questionView = null;
-		switch(type) 
-		{
-		case "Short Answer" :
-			questionView = driver.findElement(SAQuestionWindow);
-			break;
+		try {
+			switch(type) 
+			{
+			case "Short Answer" :
+				questionView = driver.findElement(SAQuestionWindow);
+				break;
 			
-		case "True False" :
-			questionView = driver.findElement(TFQuestionWindow);
-			break;
-		case "Multiple Choice" :
-			questionView = driver.findElement(MCQuestionWindow);
-			break;
-		default:
-			System.out.println("Invalid Question Type View");
+			case "True False" :
+				questionView = driver.findElement(TFQuestionWindow);
+				break;
+			case "Multiple Choice" :
+				questionView = driver.findElement(MCQuestionWindow);
+				break;
+			default:
+				System.out.println("Invalid Question Type View" + type);
+			}
+		}
+		catch(NullPointerException e)
+		{
+			e.printStackTrace();
 		}
 		return questionView.isDisplayed();
 	}
@@ -272,14 +271,14 @@ public class QuizzesPage {
 	
 	public void clickOnSaveAndExit()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(SaveAndExitBtn));
-		driver.findElement(SaveAndExitBtn).click();
+		wait.until(ExpectedConditions.elementToBeClickable(saveAndExitBtn));
+		driver.findElement(saveAndExitBtn).click();
 	}
 	
 	public boolean verifyQuizNameFromList()
 	{
-		String quizName = prop.getProperty("QuizName");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='"+quizName+"']")));
-		return driver.findElement(By.xpath("//a[text()='"+quizName+"']")).isDisplayed();
+		teacher.setQuizName(prop.getProperty("QuizName"));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='"+teacher.getQuizName()+"']")));
+		return driver.findElement(By.xpath("//a[text()='"+teacher.getQuizName()+"']")).isDisplayed();
 	}
 }

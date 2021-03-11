@@ -202,11 +202,11 @@ Feature: Smoke Test for Socrative Application
     
     
     #Logout from Teacher Application
-    #When Teacher clicks on Header username on top right corner
-    #And Teacher clicks on Sign Out Button
-    #Then Teacher verifies the "Please Confirm" popup to Signout of application
-    #
-    #When Teacher clicks on Yes in the Popup
+    When Teacher clicks on Header username on top right corner
+    And Teacher clicks on Sign Out Button
+    Then Teacher verifies the "Please Confirm" popup on the page
+    
+    When Teacher clicks on Yes in the Popup
     #Then Teacher views the default Socrative Login Page   
     
     #TODO

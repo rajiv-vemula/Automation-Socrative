@@ -34,7 +34,7 @@ public class StudentPage {
 	{
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
-		prop = ConfigReader.init_prop();
+		prop = ConfigReader.initProp();
 		roomName = null;
 	}
 
@@ -59,8 +59,9 @@ public class StudentPage {
 	}
 
 	public boolean verifyRoomName() {
-		return driver.findElement(headerRoomName).getText().equalsIgnoreCase(roomName);	}
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(headerRoomName));
+		return driver.findElement(headerRoomName).getText().equalsIgnoreCase(roomName);	
+	}
 	public boolean verifyFirstName() {
 		String lastName = prop.getProperty("student1FirstName");
 		return driver.findElement(studentFirstName).getText().equalsIgnoreCase(lastName);

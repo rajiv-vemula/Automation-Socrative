@@ -1,9 +1,9 @@
 package stepDefinitions;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
-import com.Factory.DriverFactory;
+import com.factory.DriverFactory;
 import com.pages.ReportsPage;
 import com.util.ElementUtil;
 

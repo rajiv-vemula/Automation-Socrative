@@ -1,14 +1,11 @@
 package showbieStepDefinitions;
 
 import java.util.List;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.SoftAssert;
 
-import com.Factory.DriverFactory;
+import com.factory.DriverFactory;
 import com.showbiePages.ShowbiePage;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 

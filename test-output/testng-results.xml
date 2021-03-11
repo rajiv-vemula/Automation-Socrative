@@ -1,83 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-05T17:16:11 MST" name="Default suite" finished-at="2021-03-05T17:17:15 MST" duration-ms="63347">
+  <suite started-at="2021-03-10T17:19:50 MST" name="Default suite" finished-at="2021-03-10T17:21:05 MST" duration-ms="75300">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunners.ShowbieTestRunner@3967e60c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunners.SocrativeRunner@48aaecc3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-03-05T17:16:11 MST" name="Default test" finished-at="2021-03-05T17:17:15 MST" duration-ms="63347">
-      <class name="TestRunners.ShowbieTestRunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:TestRunners.ShowbieTestRunner@3967e60c]" started-at="2021-03-05T17:16:11 MST" name="setUpClass" finished-at="2021-03-05T17:16:12 MST" duration-ms="517" status="PASS">
+    <test started-at="2021-03-10T17:19:50 MST" name="Default test" finished-at="2021-03-10T17:21:05 MST" duration-ms="75300">
+      <class name="TestRunners.SocrativeRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:TestRunners.SocrativeRunner@48aaecc3]" started-at="2021-03-10T17:19:50 MST" name="setUpClass" finished-at="2021-03-10T17:19:50 MST" duration-ms="478" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunners.ShowbieTestRunner@3967e60c]" started-at="2021-03-05T17:16:12 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-05T17:17:07 MST" duration-ms="54914" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunners.SocrativeRunner@48aaecc3]" started-at="2021-03-10T17:19:50 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-03-10T17:20:59 MST" duration-ms="68516" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Smoke Test for Showbie"]]>
+                <![CDATA["Creating a free account and upgrading to PRO"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Smoke Test for Showbie Application]"]]>
+                <![CDATA["Optional[CreateAccount and change it to PRO]"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"textarea[placeholder='Write a comment...']"}
-  (Session info: chrome=88.0.4324.192)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Rajivs-MacBook-Pro.local', ip: '2001:56a:f306:4200:89d:8fd:ea74:93c6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.192, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: /var/folders/h3/9rhxvzdj7_q...}, goog:chromeOptions: {debuggerAddress: localhost:49654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e1eee44cab1b8c69ed277802a6f8ba7c
-*** Element info: {Using=css selector, value=textarea[placeholder='Write a comment...']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"textarea[placeholder='Write a comment...']"}
-  (Session info: chrome=88.0.4324.192)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Rajivs-MacBook-Pro.local', ip: '2001:56a:f306:4200:89d:8fd:ea74:93c6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.192, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: /var/folders/h3/9rhxvzdj7_q...}, goog:chromeOptions: {debuggerAddress: localhost:49654}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e1eee44cab1b8c69ed277802a6f8ba7c
-*** Element info: {Using=css selector, value=textarea[placeholder='Write a comment...']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.showbiePages.ShowbiePage.verifyTextArea(ShowbiePage.java:208)
-at showbieStepDefinitions.ShowbiePageSteps.teacher_verifies_page_with_textarea(ShowbiePageSteps.java:135)
-at ✽.Teacher verifies "Shared Items" page with "Write a comment..." textarea(file:///Users/rajivvemula/SeleniumBVT/Automation-Socrative/src/java/resources/Features/ShowbieSmokeTest.feature:42)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunners.ShowbieTestRunner@3967e60c]" started-at="2021-03-05T17:17:07 MST" name="tearDownClass" finished-at="2021-03-05T17:17:15 MST" duration-ms="7892" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunners.SocrativeRunner@48aaecc3]" started-at="2021-03-10T17:20:59 MST" name="tearDownClass" finished-at="2021-03-10T17:21:05 MST" duration-ms="6280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- TestRunners.ShowbieTestRunner -->
+      </class> <!-- TestRunners.SocrativeRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

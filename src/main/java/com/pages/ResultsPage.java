@@ -20,20 +20,20 @@ public class ResultsPage {
 	private By resultsTab = By.xpath(("//span[text()='Results']"));
 	private By animatedWifiSymbol = By.cssSelector(".animated-wifi-symbol");
 	private By wifiSymbol = By.cssSelector(".wifi-symbol");
-	private By FinishBtn = By.xpath("//*[contains(text(),'Finish')]");
-	private By ShowNamesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
-	private By ShowResponsesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
-	private By ShowResultsToggle = By.xpath("//span[contains(text() ,'Show Names')]");
-	private By NextQuestionBtn = By.cssSelector("button[aria-label = 'Next Question']");
-	private By PreviousQuestionBtn = By.cssSelector("button[aria-label = 'Previous Question']");
-	private By BackToResultsTabBtn = By.xpath("//*[contains(text(),'Back to Results Tab')]");
-	private By ShowResultsBtn = By.xpath("//button[contains(text(),'Show Results')]");
-	private By ShowAnswersBtn = By.xpath("//button[contains(text(),'Show Answers')]");
-	private By ShowNamesBtn = By.xpath("//button[contains(text(),'Show Names')]");
-	private By ScoreSelectBtn = By.id("score-select");
-	private By NamesAscending = By.xpath("//span[contains(text(),'ascending')]");
-	private By ShareBtn = By.xpath("//div[contains(text(),'Share')]");
-	private By ExportBtn = By.xpath("//div[contains(text(),'Export')]");
+	private By finishBtn = By.xpath("//*[contains(text(),'Finish')]");
+	private By showNamesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
+	private By showResponsesToggle = By.xpath("//span[contains(text() ,'Show Names')]");
+	private By showResultsToggle = By.xpath("//span[contains(text() ,'Show Names')]");
+	private By nextQuestionBtn = By.cssSelector("button[aria-label = 'Next Question']");
+	private By previousQuestionBtn = By.cssSelector("button[aria-label = 'Previous Question']");
+	private By backToResultsTabBtn = By.xpath("//*[contains(text(),'Back to Results Tab')]");
+	private By showResultsBtn = By.xpath("//button[contains(text(),'Show Results')]");
+	private By showAnswersBtn = By.xpath("//button[contains(text(),'Show Answers')]");
+	private By showNamesBtn = By.xpath("//button[contains(text(),'Show Names')]");
+	private By scoreSelectBtn = By.id("score-select");
+	private By namesAscending = By.xpath("//span[contains(text(),'ascending')]");
+	private By shareBtn = By.xpath("//div[contains(text(),'Share')]");
+	private By exportBtn = By.xpath("//div[contains(text(),'Export')]");
 	private By launchActivityBtn = By.xpath("//button[text()='Launch Activity']");
 	private By closeActivityOKBtn = By.xpath("//button[text() = 'OK']");
 	private By spaceRaceHeaderName = By.cssSelector(".space-race-header-text");
@@ -42,7 +42,7 @@ public class ResultsPage {
 	{
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
-		prop = ConfigReader.init_prop();
+		prop = ConfigReader.initProp();
 	}
 	
 	public boolean verifyQuizName()
@@ -70,20 +70,20 @@ public class ResultsPage {
 	public void verifyToggles(String message)
 	{
 		if(message.equalsIgnoreCase("Active Activity")) {
-		Assert.check(driver.findElement(ShowNamesToggle).isEnabled());
-		Assert.check(driver.findElement(ShowResponsesToggle).isEnabled());
-		Assert.check(driver.findElement(ShowResultsToggle).isEnabled());
+		Assert.check(driver.findElement(showNamesToggle).isEnabled());
+		Assert.check(driver.findElement(showResponsesToggle).isEnabled());
+		Assert.check(driver.findElement(showResultsToggle).isEnabled());
 		}
 		else if(message.equalsIgnoreCase("After Activity")) {
-			Assert.check(!driver.findElement(ShowNamesToggle).isSelected());
-			Assert.check(!driver.findElement(ShowResponsesToggle).isSelected());
-			Assert.check(!driver.findElement(ShowResultsToggle).isSelected());
+			Assert.check(!driver.findElement(showNamesToggle).isSelected());
+			Assert.check(!driver.findElement(showResponsesToggle).isSelected());
+			Assert.check(!driver.findElement(showResultsToggle).isSelected());
 		}
 	}
 	
 	public void selectScoreByMethod(String method)
 	{
-		Select score = new Select(driver.findElement(ScoreSelectBtn));
+		Select score = new Select(driver.findElement(scoreSelectBtn));
 		score.selectByVisibleText("Progress");
 		//score.selectByVisibleText("Score %");
 		//score.selectByVisibleText("Score #");
@@ -92,8 +92,8 @@ public class ResultsPage {
 	
 	public void clickOnFinishBtn()
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(FinishBtn));
-		driver.findElement(FinishBtn).click();
+		wait.until(ExpectedConditions.elementToBeClickable(finishBtn));
+		driver.findElement(finishBtn).click();
 	}
 	
 	public boolean verifyFinishPopup(String popup)
@@ -112,13 +112,13 @@ public class ResultsPage {
 	
 	public boolean verifyShareBtn()
 	{
-		wait.until(ExpectedConditions.visibilityOfElementLocated(ShareBtn));
-		return driver.findElement(ShareBtn).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(shareBtn));
+		return driver.findElement(shareBtn).isDisplayed();
 	}
 	public boolean verifyExportBtn()
 	{
-		wait.until(ExpectedConditions.visibilityOfElementLocated(ExportBtn));
-		return driver.findElement(ExportBtn).isDisplayed();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(exportBtn));
+		return driver.findElement(exportBtn).isDisplayed();
 	}
 
 	public void clickOnResultsTab() {

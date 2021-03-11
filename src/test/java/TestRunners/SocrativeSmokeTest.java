@@ -15,7 +15,7 @@ import io.cucumber.testng.CucumberOptions;
 		
 )
 
-public class ParallelRun extends AbstractTestNGCucumberTests {
+public class SocrativeSmokeTest extends AbstractTestNGCucumberTests {
 //	@Override
 //	@DataProvider(parallel = true)
 //	public Object[][] scenarios() {

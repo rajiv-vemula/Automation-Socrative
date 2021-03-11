@@ -1,6 +1,7 @@
 /target/
 /test-output/Default suite/
 /test-output/old/
+/test-output/junitreports/
 *.css
 *.png
 *.html

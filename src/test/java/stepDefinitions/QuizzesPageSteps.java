@@ -1,10 +1,10 @@
 package stepDefinitions;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import com.Factory.DriverFactory;
+import com.factory.DriverFactory;
 import com.pages.QuizzesPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,13 +24,13 @@ public class QuizzesPageSteps {
 
 	
 	@When("Teacher clicks on Quizzes Tab")
-	public void teacher_clicks_on_quizzes_tab() {
+	public void teacher_clicks_on_quizzes_tab() throws InterruptedException {
 		quizPage.clickOnQuizzesTab();
 	}
 	
 	@Then("Teacher views the {string} Page")
 	public void teacher_views_the_page(String title) {
-		softAssert.assertEquals(title, quizPage.verifyPageTitle(title));
+		softAssert.assertEquals(title, quizPage.verifyPageTitle());
 	}
 
 	@When("Teacher clicks on Add Quiz and Create New")

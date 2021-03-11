@@ -36,14 +36,14 @@ public class ReportsPage {
 	{
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
-		prop = ConfigReader.init_prop();
+		prop = ConfigReader.initProp();
 	}
 
 
 	public void clickOnButton(String button) 
 	{
-		By BackToResultsTabBtn = By.xpath("//div[contains(text(),'"+button+"')]/parent::*");
-		driver.findElement(BackToResultsTabBtn).click();
+		By backToResultsTabBtn = By.xpath("//div[contains(text(),'"+button+"')]/parent::*");
+		driver.findElement(backToResultsTabBtn).click();
 		
 	}
 

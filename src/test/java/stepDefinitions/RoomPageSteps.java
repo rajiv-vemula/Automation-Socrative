@@ -1,12 +1,10 @@
 package stepDefinitions;
 
-
-
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.Factory.DriverFactory;
+import com.factory.DriverFactory;
 import com.pages.RoomPage;
 
 import io.cucumber.java.en.Then;
@@ -17,8 +15,7 @@ public class RoomPageSteps {
 	private RoomPage roomPage;
 	private WebDriver driver;
 
-	public RoomPageSteps()
-	{
+	public RoomPageSteps() {
 		driver = DriverFactory.getDriver();
 		roomPage = new RoomPage(driver);
 	}
@@ -46,72 +43,63 @@ public class RoomPageSteps {
 
 	@Then("Teacher verifies Room Added Message and Room Name in the page")
 	public void teacher_verifies_room_added_message_and_room_name_in_the_page() {
+		Assert.assertTrue(roomPage.verifyMessage());
 		Assert.assertTrue(roomPage.verifyRoomName());
 	}
 
 	@When("Teacher clicks on the Room Name and confirms the Popup")
-	public void teacher_clicks_on_the_room_name_and_confirms_the_popup() {
+	public void teacher_clicks_on_the_room_name_and_confirms_the_popup() throws InterruptedException {
 		roomPage.clickOnRoom();
 		roomPage.confirmPopUp();		
 	}
 	
 	@Then("Teacher verifies Room Name is displayed on the centre of page")
-	public void teacher_verifies_room_name_is_displayed_on_the_centre_of_page()
-	{
+	public void teacher_verifies_room_name_is_displayed_on_the_centre_of_page() {
 		Assert.assertTrue(roomPage.verifyHeaderRoomName());
 	}
 	
 	@When("Teacher clicks on Roster button to add students")
-	public void teacher_clicks_on_roster_button_to_add_students()
-	{
+	public void teacher_clicks_on_roster_button_to_add_students() {
 		roomPage.clickOnRosterButton();
 	}
 	
 	@When("Teacher clicks on {string} method to enter the students")
-	public void teacher_clicks_on_method_to_enter_the_students(String method)
-	{
+	public void teacher_clicks_on_method_to_enter_the_students(String method) {
 		roomPage.clickOnMethod(method);
 	}
 	
 	@Then("Teacher views {string} title window to select number of students")
-	public void teacher_views_title_window_to_select_number_of_students(String title)
-	{
+	public void teacher_views_title_window_to_select_number_of_students(String title) {
 		Assert.assertEquals(title, roomPage.verifyTitleWindow());
 	}
 	
 	@When("Teacher enters the number of students to add")
-	public void teacher_enters_the_number_of_students_to_add()
-	{
+	public void teacher_enters_the_number_of_students_to_add() {
 		roomPage.enterStudentCount();
 	}
 	
 	@When("Teacher clicks on Create Form button")
-	public void teacher_clicks_on_create_form()
-	{
+	public void teacher_clicks_on_create_form() {
 		roomPage.clickOnCreateForm();
 	}
 	
 	@Then("Teacher views the modal with default options")
-	public void teacher_views_the_modal_with_default_options()
-	{
+	public void teacher_views_the_modal_with_default_options() {
 		Assert.assertTrue(roomPage.verifyAddStudentModal());
 	}
 	
 	@When("Teacher enters the student details - firstname, lastname, ID, email")
-	public void teacher_enters_the_student_details_firstname_lastname_id_email()
-	{
+	public void teacher_enters_the_student_details_firstname_lastname_id_email() {
 		roomPage.enterStudenDetails();
 	}
 	
 	@When("Teacher clicks on {string} button in the form")
-	public void teacher_clicks_on_button_in_the_form(String button)
-	{
+	public void teacher_clicks_on_button_in_the_form(String button) {
 		roomPage.clickOnButtonInForm(button);
 	}
 	
 	@Then("Teacher validates the student details in the Roster")
-	public void teacher_validates_the_student_details_in_the_roster()
-	{
+	public void teacher_validates_the_student_details_in_the_roster() {
 		driver.manage().window().setPosition(new Point(-150,-300));
 		Assert.assertTrue(roomPage.validateStudentDetailsInRoster());
 	}

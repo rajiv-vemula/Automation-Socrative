@@ -1,9 +1,9 @@
 package stepDefinitions;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
-import com.Factory.DriverFactory;
+import com.factory.DriverFactory;
 import com.pages.ResultsPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

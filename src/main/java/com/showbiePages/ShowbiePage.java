@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.util.ConfigReader;
-import com.util.Teacher;
+
+import pojo.Teacher;
 
 public class ShowbiePage {
 
@@ -69,7 +70,7 @@ public class ShowbiePage {
 	{
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
-		prop = ConfigReader.init_prop();
+		prop = ConfigReader.initProp();
 		teacher = new Teacher();
 	}
 

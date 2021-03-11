@@ -1,19 +1,18 @@
 package TestRunners;
 
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-
-@RunWith(Cucumber.class)
 @CucumberOptions(
-			features = {"src/java/resources/Features/SmokeTest.feature"},
-			glue = {"StepDefinitions"},
-			tags = "@Smokey or @Regression",
-			plugin = {"pretty"}
-		)
+		features = { "src/java/resources/Features/CreateAccount.feature" },
+		plugin = {"pretty",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+				}, 
+		monochrome = true,
+		glue = { "stepDefinitions" }
+		
+)
 
-public class SocrativeRunner {
-	
+public class SocrativeRunner extends AbstractTestNGCucumberTests {
 
 }

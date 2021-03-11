@@ -56,7 +56,6 @@ public class LoginPage {
 	private By purchaseBtn = By.id("licensePurchaseButton");
 	
 	
-	
 	// 2.Contructor of the Page
 	public LoginPage(WebDriver driver)
 	{
@@ -66,14 +65,9 @@ public class LoginPage {
 	
 	//3. Page Actions: Features of the page the form of methods
 	
-	public boolean verifyLinks(String ResetPwd, String CreateAcct)
+	public boolean verifyLinks(String resetPwd, String createAcct)
 	{
-		if(driver.findElement(By.linkText(ResetPwd)).isDisplayed() && driver.findElement(By.linkText(CreateAcct)).isDisplayed())
-		{
-			return true; 
-		}
-		else
-			return false;
+		return driver.findElement(By.linkText(resetPwd)).isDisplayed() && driver.findElement(By.linkText(createAcct)).isDisplayed();
 	}
 	
 	public void enterEmail(String email)
@@ -96,26 +90,12 @@ public class LoginPage {
 	{	
 		wait.until(ExpectedConditions.visibilityOfElementLocated(headerName));
 		String name = driver.findElement(userName).getText();
-		if(driver.findElement(headerName).isDisplayed() && name.equals("Rajiv"))
-		{
-			return true;
-		}	
-		else 
-			return false;
+		return driver.findElement(headerName).isDisplayed() && name.equals("Rajiv");
 	}
 
 	public boolean verifyLoginPage() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(teacherLoginMessage));
-		
-		if( driver.findElement(teacherLoginMessage).isDisplayed() && driver.findElement(teacherLoginForm).isDisplayed())
-		{
-			return true;
-		}
-		else
-		{
-			System.out.println("Login Page is Not displayed");
-			return false;
-		}
+		wait.until(ExpectedConditions.visibilityOfElementLocated(teacherLoginMessage));	
+		return driver.findElement(teacherLoginMessage).isDisplayed() && driver.findElement(teacherLoginForm).isDisplayed();
 	}
 
 	public void clickOnLink(String link) {
